@@ -58,12 +58,12 @@ class Main extends Component {
                 <Redirect from={basePath} to={`${basePath}/auth`}/>
 
                 <Route path="/" component={Layout}>
-                    {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest})}
+                    {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
 
-                    {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated})}
-                    {SettingsRouter({basePath: 'settings', onEnter: this._userShouldBeAuthenticated})}
+                    {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {SettingsRouter({basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this)})}
 
-                    {AppsRouter({basePath: 'apps', onEnter: this._userShouldBeAuthenticated, children: this.props.children})}
+                    {AppsRouter({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
 
                     {ErrorRouter({basePath: '*'})}
                 </Route>
