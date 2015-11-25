@@ -3,13 +3,14 @@
 [React router](https://github.com/rackt/react-router) and [Flux](https://facebook.github.io/flux/).
 
 ### DISCLAIMER
-**Firepack** is in a very **early phase of development** and can be a **subject of breaking changes** in near future.
+**Firepack** is in its very **early phase of development** and can be a **subject of breaking changes** in near future development.
 
 ## Idea
 The main idea of **Firepack** is to create a [Firebase](https://www.firebase.com/) application wrapper
 which should speed up development and/or prototyping of Firebase applications.  
 **Firepack** will intend to solve *authentification* and *account/profile management* for your application by providing
-a simple wrapper with default *sign up*, *sign in* and *password reset* components as well as a default *Dashboard* and *Settings* pages.
+a simple wrapper with default *sign up*, *sign in* and *password reset* components as well as a default *Dashboard* and *Settings* pages.  
+You will be able to create application pages and functionalites which will live inside Firepack wrapper. At least that is the idea ;)
 
 ## Demo
 To see it in action please check the [Firepack App](https://bulicmatko.github.io/firepack-app/).

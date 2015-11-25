@@ -24,22 +24,38 @@ const Style = require('./_lib/styles/main.scss');
  */
 class Main extends Component {
 
+    static propTypes = {
+        basePath: PropTypes.string,
+        firebaseUrl: PropTypes.string.isRequired
+    };
+
+    static defaultProps = {
+        basePath: '/',
+        firebaseUrl: undefined
+    };
+
     _userShouldBeGuest (nextState, replaceState) {
+        const { basePath } = this.props;
+
         if (!UserStore.isUserGuest()) {
-            replaceState({}, '/dashboard');
+            replaceState({}, `${basePath}/dashboard`);
         }
     }
 
     _userShouldBeAuthenticated (nextState, replaceState) {
+        const { basePath } = this.props;
+
         if (!UserStore.isUserAuthenticated()) {
-            replaceState({nextPathname: nextState.location.pathname}, '/auth');
+            replaceState({nextPathname: nextState.location.pathname}, `${basePath}/auth`);
         }
     }
 
     render() {
+        const { basePath, firebaseUrl } = this.props;
+
         return (
             <Router history={createHistory()}>
-                <Redirect from="/" to="/auth"/>
+                <Redirect from={basePath} to={`${basePath}/auth`}/>
 
                 <Route path="/" component={Layout}>
                     {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest})}
