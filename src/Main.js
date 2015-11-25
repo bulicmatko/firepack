@@ -57,7 +57,7 @@ class Main extends Component {
             <Router history={createHistory()}>
                 <Redirect from={basePath} to={`${basePath}/auth`}/>
 
-                <Route path="/" component={Layout}>
+                <Route path={basePath} component={Layout}>
                     {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
 
                     {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
