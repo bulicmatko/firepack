@@ -27,7 +27,7 @@ class Main extends Component {
 
     static propTypes = {
         basePath: PropTypes.string,
-        firebaseUrl: PropTypes.string.isRequired
+        firebaseUrl: PropTypes.string.isRequired,
         apps: PropTypes.array.isRequired
     };
 
