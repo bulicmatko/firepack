@@ -69,7 +69,7 @@ class Sidebar extends Component {
                         ]
                     }, {
                         title: 'Apps',
-                        links: SidebarApps
+                        links: SidebarApps.links
                         // links: [
                         //     {
                         //         icon: 'calendar',

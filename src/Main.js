@@ -56,7 +56,7 @@ class Main extends Component {
     render() {
         const { basePath, apps } = this.props;
 
-        SidebarApps = apps;
+        SidebarApps.links = apps;
 
         return (
             <Router history={createHistory()}>

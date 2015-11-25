@@ -9,7 +9,9 @@
 /**
  *  Sidebar Apps
  */
-let SidebarApps = [];
+const SidebarApps = {
+    links: []
+};
 
 // Export Sidebar Apps
 export default SidebarApps;
