@@ -1,0 +1,33 @@
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Notifications
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Notifications
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.Notifications {
+  position: absolute; overflow: hidden;
+  top: 0; right: 0; bottom: auto; left: auto;
+  padding: rem(30); width: rem(300);
+
+  .notification {
+    color: map-get($COLORS, White);
+    padding: rem(15);
+    margin-bottom: rem(10);
+
+    &.error {
+      background-color: map-get($COLORS, Ruby);
+    }
+    &.warning {
+      background-color: map-get($COLORS, Daisy);
+    }
+    &.info {
+      background-color: map-get($COLORS, Skye);
+    }
+    &.success {
+      background-color: map-get($COLORS, Kelly);
+    }
+  }
+}

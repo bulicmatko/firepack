@@ -1,0 +1,45 @@
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Menu
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Menu
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.Menu {
+    padding: rem(15);
+
+  > .category {
+      margin-bottom: rem(30);
+
+    > .title {
+      font-size: rem(12); color: map-get($COLORS, Asher);
+      font-weight: bold; text-transform: uppercase;
+      margin: rem(15) 0;
+    }
+
+    > .items {
+      margin: 0 rem(-15);
+
+      > .item {
+          margin-bottom: rem(3);
+
+        > a {
+          font-size: rem(14); color: map-get($COLORS, Asher);
+          display: block; padding: rem(8) rem(15) rem(8) rem(30);
+          border: rem(2) solid transparent; border-radius: rem(2);
+
+          &:hover, &:focus {
+            color: map-get($COLORS, Raven);
+          }
+
+          &.isActive {
+            color: map-get($COLORS, Raven); font-weight: bold;
+            border-left-color: map-get($COLORS, Ruby);
+          }
+        }
+      }
+    }
+  }
+}

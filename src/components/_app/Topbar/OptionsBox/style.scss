@@ -1,0 +1,40 @@
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Options Box
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@import '../../../../_lib/styles/_core/all';
+
+/**
+ *  Options Box
+ */
+.OptionsBox {
+  @include clearfix();
+  @include transition(box-shadow .1s ease-in-out);
+
+  > li {
+    float: left; margin: 0 rem(3);
+
+    > button {
+      font-size: rem(16); line-height: rem(36);
+      color: map-get($COLORS, Asher); text-align: center;
+
+      display: block;
+      margin: 0; padding: 0; width: rem(36);
+
+      background-color: transparent; border: 0; border-radius: 50%;
+
+      &:hover, &:focus {
+        background-color: map-get($COLORS, Lilia);
+      }
+
+      &:active {
+        color: map-get($COLORS, Stone);
+
+        box-shadow: inset 0 rem(3) rem(9) map-get($COLORS, Pearl);
+      }
+    }
+  }
+}

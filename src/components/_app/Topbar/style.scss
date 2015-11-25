@@ -1,0 +1,31 @@
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Topbar
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@import '../../../_lib/styles/_core/all';
+
+/**
+ *  Topbar
+ */
+.Topbar {
+  @include clearfix();
+
+  .Topbar--ToggleButton {
+    float: left; padding: rem(12) rem(15);
+  }
+
+  .Topbar--SearchBox {
+    float: left; padding: rem(12) 0; width: rem(300);
+  }
+
+  .Topbar--OptionsBox {
+    float: right; padding: rem(12) rem(15);
+  }
+
+  .Topbar--ProfileBox {
+    float: right; padding: rem(10);
+  }
+}

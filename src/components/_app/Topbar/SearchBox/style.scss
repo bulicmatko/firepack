@@ -1,0 +1,53 @@
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Search Box
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@import '../../../../_lib/styles/_core/all';
+
+/**
+ *  Search Box
+ */
+.SearchBox {
+  position: relative;
+
+  > input[type="search"] {
+    @include transition(box-shadow .1s ease-in-out);
+
+    font-size: rem(14); line-height: rem(26);
+    color: map-get($COLORS, Gray);
+
+    display: block; width: 100%; box-sizing: border-box;
+    margin: 0; padding: rem(6) rem(36) rem(4) rem(12);
+
+    background-color: map-get($COLORS, Lilia);
+    border: 0; border-radius: rem(2);
+
+    &:hover {
+      color: map-get($COLORS, Stone);
+    }
+
+    &:focus {
+      color: map-get($COLORS, Asher);
+
+      box-shadow: inset 0 rem(3) rem(9) map-get($COLORS, Pearl);
+    }
+  }
+
+  > button[type="submit"] {
+    font-size: rem(16); line-height: rem(36);
+    color: map-get($COLORS, Gray); text-align: center;
+
+    position: absolute; overflow: hidden;
+    top: 0; right: 0; bottom: 0; left: auto; width: rem(36);
+    margin: 0; padding: 0;
+
+    background-color: transparent; border: 0; border-radius: rem(2);
+
+    &:hover, &:focus {
+      color: map-get($COLORS, Stone);
+    }
+  }
+}

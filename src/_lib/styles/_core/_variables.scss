@@ -1,0 +1,48 @@
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Breakpoints Map
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$BREAKPOINTS: (
+  XS: 320px,
+  S:  768px,
+  M:  1024px,
+  L:  1224px,
+  XL: 1824px
+);
+
+
+//  Colors Map
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$COLORS: (
+  Black:    #000,
+  White:    #fff,
+
+  Indigo:   #0d3d56,
+  Sophia:   #0f5b78,
+  Skye:     #117899,
+  Alice:    #1496bb,
+  Jade:     #5ca794,
+  Kelly:    #50b121,
+  Daisy:    #ebc944,
+  Amber:    #edaa38,
+  April:    #f08c2d,
+  Coral:    #f26d21,
+  Rowan:    #d94e20,
+  Ruby:     #c02f1d,
+
+  Jet:      #131516,
+  Raven:    #373d3f,
+  Asher:    #555f61,
+  Stone:    #707c80,
+  Gray:     #8c979a,
+  Sterling: #a7b0b2,
+  Heather:  #c1c7c9,
+  Pearl:    #dadedf,
+  Lilia:    #f2f3f4
+);
