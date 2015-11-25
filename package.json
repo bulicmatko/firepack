@@ -1,0 +1,27 @@
+{
+  "name": "firepack",
+  "version": "0.0.0-dev",
+  "description": "Firebase application wrapper built with React, React router and Flux.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bulicmatko/firepack.git"
+  },
+  "keywords": [
+    "firepack",
+    "firebase",
+    "react",
+    "react-router",
+    "flux",
+    "application"
+  ],
+  "author": "Matko Bulic <bulicmatko@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bulicmatko/firepack/issues"
+  },
+  "homepage": "https://github.com/bulicmatko/firepack#readme"
+}
