@@ -27,15 +27,15 @@ const Style = require('./_lib/styles/main.scss');
 class Main extends Component {
 
     static propTypes = {
-        basePath: PropTypes.string,
+        basePath: PropTypes.string.isRequired,
         firebaseUrl: PropTypes.string.isRequired,
-        appsList: PropTypes.array.isRequired
+        sidebarMenu: PropTypes.array.isRequired
     };
 
     static defaultProps = {
-        basePath: '/',
+        basePath: '',
         firebaseUrl: undefined,
-        appsList: []
+        sidebarMenu: []
     };
 
     _userShouldBeGuest (nextState, replaceState) {
@@ -55,11 +55,11 @@ class Main extends Component {
     }
 
     render() {
-        const { basePath, firebaseUrl, appsList } = this.props;
+        const { basePath, firebaseUrl, sidebarMenu } = this.props;
 
         Config.basePath = basePath;
         Config.firebaseUrl = firebaseUrl;
-        Config.appsList = appsList;
+        Config.sidebarMenu = sidebarMenu;
 
         return (
             <Router history={createHistory()}>
@@ -73,7 +73,7 @@ class Main extends Component {
 
                     {AppsRouter({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
 
-                    {ErrorRouter({basePath: '*'})}
+                    {ErrorRouter({basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this)})}
                 </Route>
             </Router>
         );

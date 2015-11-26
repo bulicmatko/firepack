@@ -3,7 +3,7 @@
 [React router](https://github.com/rackt/react-router) and [Flux](https://facebook.github.io/flux/).
 
 ### DISCLAIMER
-**Firepack** is in its very **early phase of development** and can be a **subject of breaking changes** in near future development.
+**Firepack** is in its **early phase of development** and can be a **subject of breaking changes** in near future.
 
 ## Idea
 The main idea of **Firepack** is to create a [Firebase](https://www.firebase.com/) application wrapper

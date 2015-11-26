@@ -12,7 +12,7 @@
 const Config = {
     basePath: '/',
     firebaseUrl: undefined,
-    appsList: []
+    sidebarMenu: []
 };
 
 // Export Config
