@@ -5,15 +5,15 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
 import Firebase from 'firebase';
+
+import Config from '../Config';
 
 /**
  *  Firebase
  */
 
-window.Firebase = new Firebase('https://fifa-tracker.firebaseio.com');
+window.Firebase = new Firebase(Config.firebaseUrl);
 
 // Export Firebase
-export default new Firebase('https://fifa-tracker.firebaseio.com');
+export default new Firebase(Config.firebaseUrl);
