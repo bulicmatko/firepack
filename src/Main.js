@@ -26,6 +26,14 @@ const Style = require('./_lib/styles/main.scss');
  */
 class Main extends Component {
 
+    constructor (props) {
+        super(props);
+
+        Config.basePath = props.basePath;
+        Config.firebaseUrl = props.firebaseUrl;
+        Config.sidebarMenu = props.sidebarMenu;
+    }
+
     static propTypes = {
         basePath: PropTypes.string.isRequired,
         firebaseUrl: PropTypes.string.isRequired,
@@ -55,11 +63,7 @@ class Main extends Component {
     }
 
     render() {
-        const { basePath, firebaseUrl, sidebarMenu } = this.props;
-
-        Config.basePath = basePath;
-        Config.firebaseUrl = firebaseUrl;
-        Config.sidebarMenu = sidebarMenu;
+        const { basePath } = this.props;
 
         return (
             <Router history={createHistory()}>
