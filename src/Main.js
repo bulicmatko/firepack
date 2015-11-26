@@ -57,6 +57,8 @@ class Main extends Component {
     render() {
         const { basePath, firebaseUrl, sidebarMenu } = this.props;
 
+        console.log(firebaseUrl);
+
         Config.basePath = basePath;
         Config.firebaseUrl = firebaseUrl;
         Config.sidebarMenu = sidebarMenu;
