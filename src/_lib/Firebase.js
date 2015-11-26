@@ -7,16 +7,11 @@
 
 import Firebase from 'firebase';
 
-import Config from '../Config';
-
 /**
  *  Firebase
  */
 
-console.log(Config);
-setTimeout(() => console.log(Config), 5000);
-
-window.Firebase = new Firebase(Config.firebaseUrl);
+window.Firebase = new Firebase('https://fifa-tracker.firebaseio.com');
 
 // Export Firebase
-export default new Firebase(Config.firebaseUrl);
+export default new Firebase('https://fifa-tracker.firebaseio.com');
