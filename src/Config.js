@@ -9,7 +9,7 @@
 /**
  *  Config
  */
-const Config = {
+let Config = {
     basePath: '',
     firebaseUrl: undefined,
     sidebarMenu: []
