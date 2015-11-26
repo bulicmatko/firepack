@@ -13,7 +13,8 @@ import Menu from './Menu/index';
 import Profile from './Profile/index';
 
 import UserStore from '../../../stores/UserStore';
-import SidebarApps from '../../../constants/SidebarApps';
+
+import Config from '../../../Config';
 
 const Style = require('./style.scss');
 
@@ -47,7 +48,7 @@ class Sidebar extends Component {
     }
 
     _renderLogo () {
-        return <Logo title="Firebox"/>;
+        return <Logo title="Firepack"/>;
     }
 
     _renderMenu () {
@@ -69,38 +70,7 @@ class Sidebar extends Component {
                         ]
                     }, {
                         title: 'Apps',
-                        links: SidebarApps.links
-                        // links: [
-                        //     {
-                        //         icon: 'calendar',
-                        //         title: 'Calendar',
-                        //         route: '/apps/calendar'
-                        //     }, {
-                        //         icon: 'phone',
-                        //         title: 'Contacts',
-                        //         route: '/apps/contacts'
-                        //     }, {
-                        //         icon: 'bell-o',
-                        //         title: 'Reminder',
-                        //         route: '/apps/reminder'
-                        //     }, {
-                        //         icon: 'check-square-o',
-                        //         title: 'Todo',
-                        //         route: '/apps/todo'
-                        //     }, {
-                        //         icon: 'sticky-note-o',
-                        //         title: 'Notes',
-                        //         route: '/apps/notes'
-                        //     }, {
-                        //         icon: 'money',
-                        //         title: 'Budget',
-                        //         route: '/apps/budget'
-                        //     }, {
-                        //         icon: 'futbol-o',
-                        //         title: 'Fifa Tracker',
-                        //         route: '/apps/fifa-tracker'
-                        //     }
-                        // ]
+                        links: Config.appsList
                     }
                 ]
             }/>

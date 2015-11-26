@@ -1,17 +1,19 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Sidebar Apps
+    Config
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
 /**
- *  Sidebar Apps
+ *  Config
  */
-const SidebarApps = {
-    links: []
+const Config = {
+    basePath: '/',
+    firebaseUrl: undefined,
+    appsList: []
 };
 
-// Export Sidebar Apps
-export default SidebarApps;
+// Export Config
+export default Config;

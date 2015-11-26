@@ -16,7 +16,8 @@ import SettingsRouter from './components/Settings/Router';
 import AppsRouter from './components/Apps/Router';
 import ErrorRouter from './components/Error/Router';
 import UserStore from './stores/UserStore';
-import SidebarApps from './constants/SidebarApps';
+
+import Config from './Config';
 
 const Style = require('./_lib/styles/main.scss');
 
@@ -28,13 +29,13 @@ class Main extends Component {
     static propTypes = {
         basePath: PropTypes.string,
         firebaseUrl: PropTypes.string.isRequired,
-        apps: PropTypes.array.isRequired
+        appsList: PropTypes.array.isRequired
     };
 
     static defaultProps = {
         basePath: '/',
         firebaseUrl: undefined,
-        apps: []
+        appsList: []
     };
 
     _userShouldBeGuest (nextState, replaceState) {
@@ -54,9 +55,11 @@ class Main extends Component {
     }
 
     render() {
-        const { basePath, apps } = this.props;
+        const { basePath, firebaseUrl, appsList } = this.props;
 
-        SidebarApps.links = apps;
+        Config.basePath = basePath;
+        Config.firebaseUrl = firebaseUrl;
+        Config.appsList = appsList;
 
         return (
             <Router history={createHistory()}>
