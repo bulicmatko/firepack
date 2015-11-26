@@ -10,7 +10,7 @@
  *  Config
  */
 const Config = {
-    basePath: '/',
+    basePath: '',
     firebaseUrl: undefined,
     sidebarMenu: []
 };
