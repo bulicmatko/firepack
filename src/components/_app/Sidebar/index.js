@@ -52,26 +52,26 @@ class Sidebar extends Component {
     }
 
     _renderMenu () {
+        let menu = [
+            {
+                title: 'Menu',
+                links: [
+                    {
+                        icon: 'tachometer',
+                        title: 'Dashboard',
+                        route: '/dashboard'
+                    }, {
+                        icon: 'cog',
+                        title: 'Settings',
+                        route: '/settings'
+                    }
+                ]
+            }
+        ];
+
+        menu.push(Config.sidebarMenu);
+
         return (
-            let menu = [
-                {
-                    title: 'Menu',
-                    links: [
-                        {
-                            icon: 'tachometer',
-                            title: 'Dashboard',
-                            route: '/dashboard'
-                        }, {
-                            icon: 'cog',
-                            title: 'Settings',
-                            route: '/settings'
-                        }
-                    ]
-                }
-            ];
-
-            menu.push(Config.sidebarMenu);
-
             <Menu menu={menu}/>
         );
     }
