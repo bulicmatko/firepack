@@ -29,7 +29,7 @@ class Main extends Component {
     static propTypes = {
         basePath: PropTypes.string.isRequired,
         firebaseUrl: PropTypes.string.isRequired,
-        sidebarMenu: PropTypes.array.isRequired
+        sidebarMenu: PropTypes.object.isRequired
     };
 
     static defaultProps = {
