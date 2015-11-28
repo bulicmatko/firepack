@@ -27,45 +27,45 @@ const Style = require('./_lib/styles/main.scss');
 class Main extends Component {
 
     static propTypes = {
-        basePath: PropTypes.string.isRequired,
+        appBasePath: PropTypes.string.isRequired,
         firebaseUrl: PropTypes.string.isRequired,
         sidebarMenu: PropTypes.object.isRequired
     };
 
     static defaultProps = {
-        basePath: '',
+        appBasePath: '',
         firebaseUrl: undefined,
         sidebarMenu: []
     };
 
     _userShouldBeGuest (nextState, replaceState) {
-        const { basePath } = this.props;
+        const { appBasePath } = this.props;
 
         if (!UserStore.isUserGuest()) {
-            replaceState({}, `${basePath}/dashboard`);
+            replaceState({}, `${appBasePath}/dashboard`);
         }
     }
 
     _userShouldBeAuthenticated (nextState, replaceState) {
-        const { basePath } = this.props;
+        const { appBasePath } = this.props;
 
         if (!UserStore.isUserAuthenticated()) {
-            replaceState({nextPathname: nextState.location.pathname}, `${basePath}/auth`);
+            replaceState({nextPathname: nextState.location.pathname}, `${appBasePath}/auth`);
         }
     }
 
     render() {
-        const { basePath, firebaseUrl, sidebarMenu } = this.props;
+        const { appBasePath, firebaseUrl, sidebarMenu } = this.props;
 
-        Config.basePath = basePath;
+        Config.appBasePath = appBasePath;
         Config.firebaseUrl = firebaseUrl;
         Config.sidebarMenu = sidebarMenu;
 
         return (
             <Router history={createHistory()}>
-                <Redirect from={basePath} to={`${basePath}/auth`}/>
+                <Redirect from={appBasePath} to={`${appBasePath}/auth`}/>
 
-                <Route path={basePath} component={Layout}>
+                <Route path={appBasePath} component={Layout}>
                     {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
 
                     {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
