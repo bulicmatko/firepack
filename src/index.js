@@ -9,7 +9,7 @@ import React, { Component, PropTypes } from 'react';
 import { createHistory } from 'history';
 import { Router, Route, Redirect } from 'react-router';
 
-import Layout from './Layout';
+import Layout from './components/Layout';
 import AuthRouter from './components/Auth/Router';
 import DashboardRouter from './components/Dashboard/Router';
 import SettingsRouter from './components/Settings/Router';
