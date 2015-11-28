@@ -7,10 +7,10 @@
 
 import React, { Component } from 'react';
 
-import TopbarComponent from './components/_app/Topbar/index';
-import SidebarComponent from './components/_app/Sidebar/index';
-import NotificationsComponent from './components/_app/Notifications/index';
-import UserStore from './stores/UserStore';
+import TopbarComponent from '../_app/Topbar/index';
+import SidebarComponent from '../_app/Sidebar/index';
+import NotificationsComponent from '../_app/Notifications/index';
+import UserStore from '../../stores/UserStore';
 
 /**
  *  Layout
