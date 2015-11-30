@@ -13,20 +13,12 @@ import { initServices } from './services';
 
 import config from './config';
 import Main from './Main';
+import Menu from './components/_shared/Menu';
 
 /**
  *  Firepack
  */
 class Firepack extends Component {
-
-    // constructor (props) {
-    //     super(props);
-
-    //     const firebase = new Firebase(props.firebaseUrl);
-
-    //     initStores(firebase);
-    //     initServices(firebase);
-    // }
 
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
@@ -62,8 +54,12 @@ class Firepack extends Component {
 }
 
 
+// export Dispatcher;
+// export BaseStore;
+
+
 // export AppWrap;
-// export AppSidebar;
+export const SidebarMenu = Menu;
 // export AppMain;
 
 // Export Firepack

@@ -5,9 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import AccountServices from '../services/AccountServices';
+import Services from '../services';
 
 /**
  *  Account Actions
@@ -15,23 +13,23 @@ import AccountServices from '../services/AccountServices';
 class AccountActions {
 
     createAccount (email, password) {
-        AccountServices.createAccount(email, password);
+        Services.AccountServices.createAccount(email, password);
     }
 
     changeAccountEmail (oldEmail, newEmail, password) {
-        AccountServices.changeAccountEmail(oldEmail, newEmail, password);
+        Services.AccountServices.changeAccountEmail(oldEmail, newEmail, password);
     }
 
     changeAccountPassword (email, oldPassword, newPassword) {
-        AccountServices.changeAccountPassword(email, oldPassword, newPassword);
+        Services.AccountServices.changeAccountPassword(email, oldPassword, newPassword);
     }
 
     resetAccountPassword (email) {
-        AccountServices.resetAccountPassword(email);
+        Services.AccountServices.resetAccountPassword(email);
     }
 
     deleteAccount (email, password) {
-        AccountServices.deleteAccount(email, password);
+        Services.AccountServices.deleteAccount(email, password);
     }
 
 }

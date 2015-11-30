@@ -5,8 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-// import UserServices from '../services/UserServices/';
-import {Services} from '../services';
+import Services from '../services';
 
 /**
  *  User Actions

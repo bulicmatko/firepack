@@ -5,9 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import ProfileServices from '../services/ProfileServices';
+import Services from '../services';
 
 /**
  *  Profile Actions
@@ -15,7 +13,7 @@ import ProfileServices from '../services/ProfileServices';
 class ProfileActions {
 
     updateProfile (patch) {
-        ProfileServices.updateProfile(patch);
+        Services.ProfileServices.updateProfile(patch);
     }
 
 }
