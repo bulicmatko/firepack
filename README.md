@@ -2,10 +2,10 @@
 > [Firebase](https://www.firebase.com/) application wrapper built with [React](http://facebook.github.io/react/),
 [React router](https://github.com/rackt/react-router) and [Flux](https://facebook.github.io/flux/).
 
-[![npm version](//img.shields.io/npm/v/firepack.svg?style=flat-square)](https://www.npmjs.com/package/firepack)
-[![NPM Status](//img.shields.io/npm/dm/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
-[![NPM Status](//img.shields.io/npm/dt/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
-[![NPM Status](//img.shields.io/npm/l/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
+[![npm version](https://img.shields.io/npm/v/firepack.svg?style=flat-square)](https://www.npmjs.com/package/firepack)
+[![NPM Status](https://img.shields.io/npm/dm/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
+[![NPM Status](https://img.shields.io/npm/dt/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
+[![NPM Status](https://img.shields.io/npm/l/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
 
 ### DISCLAIMER
 **Firepack** is in its **early phase of development** and can be a **subject of breaking changes** in near future.
