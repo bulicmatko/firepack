@@ -7,7 +7,7 @@
 
 
 // Imports
-import ProfileServices from '../services/ProfileServices.js';
+import ProfileServices from '../services/ProfileServices';
 
 /**
  *  Profile Actions

@@ -5,25 +5,26 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import Firebase from '../_lib/Firebase';
-import Dispatcher from '../_lib/Dispatcher';
-import UserEvents from '../events/UserEvents';
-import FirebaseCodes from '../constants/FirebaseCodes';
-import NotificationTypes from '../constants/NotificationTypes';
+import Dispatcher from '../../_lib/Dispatcher';
+import UserEvents from '../../events/UserEvents';
+import FirebaseCodes from '../../constants/FirebaseCodes';
+import NotificationTypes from '../../constants/NotificationTypes';
 
 /**
  *  User Services
  */
 class UserServices {
 
+    constructor (args) {
+        this._DB = args.firebase;
+    }
+
     authenticateUser (email, password) {
         Dispatcher.dispatch({
             event: UserEvents.USER_AUTHENTIFICATION_STARTED
         });
 
-        Firebase.authWithPassword({email, password}, (error, authData) => {
+        this._DB.authWithPassword({email, password}, (error, authData) => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_EMAIL:
@@ -98,7 +99,7 @@ class UserServices {
             event: UserEvents.USER_UNAUTHENTIFICATION_STARTED
         });
 
-        Firebase.unauth();
+        this._DB.unauth();
 
         Dispatcher.dispatch({
             event: UserEvents.USER_UNAUTHENTICATED,
@@ -113,4 +114,4 @@ class UserServices {
 }
 
 // Export User Services
-export default new UserServices();
+export default UserServices;

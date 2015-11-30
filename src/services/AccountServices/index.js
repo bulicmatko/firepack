@@ -5,25 +5,26 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import Firebase from '../_lib/Firebase';
-import Dispatcher from '../_lib/Dispatcher';
-import AccountEvents from '../events/AccountEvents';
-import FirebaseCodes from '../constants/FirebaseCodes';
-import NotificationTypes from '../constants/NotificationTypes';
+import Dispatcher from '../../_lib/Dispatcher';
+import AccountEvents from '../../events/AccountEvents';
+import FirebaseCodes from '../../constants/FirebaseCodes';
+import NotificationTypes from '../../constants/NotificationTypes';
 
 /**
  *  Account Services
  */
 class AccountServices {
 
+    constructor (args) {
+        this._DB = args.firebase;
+    }
+
     createAccount (email, password) {
         Dispatcher.dispatch({
             event: AccountEvents.ACCOUNT_CREATION_STARTED
         });
 
-        Firebase.createUser({email, password}, (error, userData) => {
+        this._DB.createUser({email, password}, (error, userData) => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_EMAIL:
@@ -106,7 +107,7 @@ class AccountServices {
             event: AccountEvents.ACCOUNT_PASSWORD_RESET_STARTED
         });
 
-        Firebase.resetPassword({email}, (error) => {
+        this._DB.resetPassword({email}, (error) => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_USER:
@@ -174,4 +175,4 @@ class AccountServices {
 }
 
 // Export Account Services
-export default new AccountServices();
+export default AccountServices;

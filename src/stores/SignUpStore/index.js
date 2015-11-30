@@ -1,19 +1,17 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Sign In Store
+    Sign Up Store
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import BaseStore from '../_lib/BaseStore';
-import UserEvents from '../events/UserEvents';
+import BaseStore from '../../_lib/BaseStore';
+import AccountEvents from '../../events/AccountEvents';
 
 /**
- *  Sign In Store
+ *  Sign Up Store
  */
-class SignInStore extends BaseStore {
+class SignUpStore extends BaseStore {
 
     constructor (args) {
         super(args);
@@ -55,17 +53,17 @@ class SignInStore extends BaseStore {
 
     _handleDispatcherEvent (payload) {
         switch (payload.event) {
-            case UserEvents.USER_AUTHENTIFICATION_STARTED:
+            case AccountEvents.ACCOUNT_CREATION_STARTED:
                 this._resetError();
                 this._setLoadingState(true);
                 this._emitChange();
                 break;
-            case UserEvents.USER_AUTHENTIFICATION_FAILED:
+            case AccountEvents.ACCOUNT_CREATION_FAILED:
                 this._setError(payload.data);
                 this._setLoadingState(false);
                 this._emitChange();
                 break;
-            case UserEvents.USER_AUTHENTICATED:
+            case AccountEvents.ACCOUNT_CREATED:
                 this._resetError();
                 this._setLoadingState(false);
                 this._emitChange();
@@ -75,5 +73,5 @@ class SignInStore extends BaseStore {
 
 }
 
-// Export Sign In Store
-export default new SignInStore();
+// Export Sign Up Store
+export default SignUpStore;

@@ -1,30 +1,31 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Main
+    Firepack - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes } from 'react';
-import { createHistory } from 'history';
-import { Router, Route, Redirect } from 'react-router';
+import Firebase from 'firebase';
 
-import Layout from './components/Layout';
-import AuthRouter from './components/Auth/Router';
-import DashboardRouter from './components/Dashboard/Router';
-import SettingsRouter from './components/Settings/Router';
-import AppsRouter from './components/Apps/Router';
-import ErrorRouter from './components/Error/Router';
-import UserStore from './stores/UserStore';
+import { initStores } from './stores';
+import { initServices } from './services';
 
-import Config from './Config';
-
-const Style = require('./_lib/styles/main.scss');
+import Main from './Main';
 
 /**
- *  Main
+ *  Firepack
  */
-class Main extends Component {
+class Firepack extends Component {
+
+    // constructor (props) {
+    //     super(props);
+
+    //     const firebase = new Firebase(props.firebaseUrl);
+
+    //     initStores(firebase);
+    //     initServices(firebase);
+    // }
 
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
@@ -38,48 +39,22 @@ class Main extends Component {
         sidebarMenu: []
     };
 
-    _userShouldBeGuest (nextState, replaceState) {
-        const { appBasePath } = this.props;
-
-        if (!UserStore.isUserGuest()) {
-            replaceState({}, `${appBasePath}/dashboard`);
-        }
-    }
-
-    _userShouldBeAuthenticated (nextState, replaceState) {
-        const { appBasePath } = this.props;
-
-        if (!UserStore.isUserAuthenticated()) {
-            replaceState({nextPathname: nextState.location.pathname}, `${appBasePath}/auth`);
-        }
-    }
-
     render() {
-        const { appBasePath, firebaseUrl, sidebarMenu } = this.props;
+        const { appBasePath, firebaseUrl } = this.props;
 
-        Config.appBasePath = appBasePath;
-        Config.firebaseUrl = firebaseUrl;
-        Config.sidebarMenu = sidebarMenu;
+        const firebase = new Firebase(firebaseUrl);
+
+        initStores({firebase});
+        initServices({firebase});
 
         return (
-            <Router history={createHistory()}>
-                <Redirect from={appBasePath} to={`${appBasePath}/auth`}/>
-
-                <Route path={appBasePath} component={Layout}>
-                    {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
-
-                    {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
-                    {SettingsRouter({basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this)})}
-
-                    {AppsRouter({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
-
-                    {ErrorRouter({basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this)})}
-                </Route>
-            </Router>
+            <Main appBasePath={appBasePath}>
+                {this.props.children}
+            </Main>
         );
     }
 
 }
 
-// Export Main
-export default Main;
+// Export Firepack
+export default Firepack;

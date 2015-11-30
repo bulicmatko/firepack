@@ -8,9 +8,10 @@
 import Input from '../../../_lib/components/Form/Input';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import SignInStore from '../../../stores/SignInStore.js';
-import UserActions from '../../../actions/UserActions.js';
+// import SignInStore from '../../../stores/SignInStore';
+import UserActions from '../../../actions/UserActions';
 import { Link } from 'react-router';
+import Stores from '../../../stores';
 
 /**
  *  Sign In
@@ -23,8 +24,8 @@ class SignIn extends Component {
         this.state = {
             email: '',
             password: '',
-            error: SignInStore.getError(),
-            isLoading: SignInStore.getLoadingState()
+            error: Stores.SignInStore.getError(),
+            isLoading: Stores.SignInStore.getLoadingState()
         };
 
         this.__handleSignInStoreDataChange = this._handleSignInStoreDataChange.bind(this);
@@ -36,18 +37,18 @@ class SignIn extends Component {
 
     componentDidMount () {
         this._focusInputField('email');
-        SignInStore.addDataChangeListener(this.__handleSignInStoreDataChange);
+        Stores.SignInStore.addDataChangeListener(this.__handleSignInStoreDataChange);
     }
 
     componentWillUnmount () {
-        SignInStore.removeDataChangeListener(this.__handleSignInStoreDataChange);
-        SignInStore.reset();
+        Stores.SignInStore.removeDataChangeListener(this.__handleSignInStoreDataChange);
+        Stores.SignInStore.reset();
     }
 
     _handleSignInStoreDataChange () {
         this.setState({
-            error: SignInStore.getError(),
-            isLoading: SignInStore.getLoadingState()
+            error: Stores.SignInStore.getError(),
+            isLoading: Stores.SignInStore.getLoadingState()
         }, () => this._focusInputField(this.state.error.field));
     }
 

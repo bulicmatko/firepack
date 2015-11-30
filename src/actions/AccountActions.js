@@ -7,7 +7,7 @@
 
 
 // Imports
-import AccountServices from '../services/AccountServices.js';
+import AccountServices from '../services/AccountServices';
 
 /**
  *  Account Actions

@@ -10,8 +10,8 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 
 import Input from '../../../_lib/components/Form/Input';
-import AccountActions from '../../../actions/AccountActions.js';
-import SignUpStore from '../../../stores/SignUpStore.js';
+import AccountActions from '../../../actions/AccountActions';
+import Stores from '../../../stores';
 
 const Style = require('./style.scss');
 
@@ -28,8 +28,8 @@ class SignUp extends Component {
             lastName: '',
             email: '',
             password: '',
-            error: SignUpStore.getError(),
-            isLoading: SignUpStore.getLoadingState()
+            error: Stores.SignUpStore.getError(),
+            isLoading: Stores.SignUpStore.getLoadingState()
         };
 
         this.__handleSignUpStoreDataChange = this._handleSignUpStoreDataChange.bind(this);
@@ -42,18 +42,18 @@ class SignUp extends Component {
     componentDidMount () {
         this._focusInputField('email');
 
-        SignUpStore.addDataChangeListener(this.__handleSignUpStoreDataChange);
+        Stores.SignUpStore.addDataChangeListener(this.__handleSignUpStoreDataChange);
     }
 
     componentWillUnmount () {
-        SignUpStore.removeDataChangeListener(this.__handleSignUpStoreDataChange);
-        SignUpStore.reset();
+        Stores.SignUpStore.removeDataChangeListener(this.__handleSignUpStoreDataChange);
+        Stores.SignUpStore.reset();
     }
 
     _handleSignUpStoreDataChange () {
         this.setState({
-            error: SignUpStore.getError(),
-            isLoading: SignUpStore.getLoadingState()
+            error: Stores.SignUpStore.getError(),
+            isLoading: Stores.SignUpStore.getLoadingState()
         }, () => this._focusInputField(this.state.error.field));
     }
 

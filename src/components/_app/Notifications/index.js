@@ -10,7 +10,8 @@
 import React, { Component } from 'react';
 import ClassNames from 'classnames';
 import NotificationTypes from '../../../constants/NotificationTypes';
-import NotificationsStore from '../../../stores/NotificationsStore.js';
+// import NotificationsStore from '../../../stores/NotificationsStore';
+import Stores from '../../../stores';
 
 /**
  *  Notifications Component
@@ -21,7 +22,7 @@ class NotificationsComponent extends Component {
         super(props);
 
         this.state = {
-            notifications: NotificationsStore.getNotifications()
+            notifications: Stores.NotificationsStore.getNotifications()
         };
 
         this.__handleNotificationsStoreDataChange = this._handleNotificationsStoreDataChange.bind(this);
@@ -32,16 +33,16 @@ class NotificationsComponent extends Component {
     }
 
     componentDidMount () {
-        NotificationsStore.addDataChangeListener(this.__handleNotificationsStoreDataChange);
+        Stores.NotificationsStore.addDataChangeListener(this.__handleNotificationsStoreDataChange);
     }
 
     componentWillUnmount () {
-        NotificationsStore.removeDataChangeListener(this.__handleNotificationsStoreDataChange);
+        Stores.NotificationsStore.removeDataChangeListener(this.__handleNotificationsStoreDataChange);
     }
 
     _handleNotificationsStoreDataChange () {
         this.setState({
-            notifications: NotificationsStore.getNotifications()
+            notifications: Stores.NotificationsStore.getNotifications()
         });
     }
 

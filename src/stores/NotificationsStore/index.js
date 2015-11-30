@@ -5,9 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import BaseStore from '../_lib/BaseStore';
+import BaseStore from '../../_lib/BaseStore';
 
 /**
  *  Notifications Store
@@ -55,4 +53,4 @@ class NotificationsStore extends BaseStore {
 }
 
 // Export Notifications Store
-export default new NotificationsStore();
+export default NotificationsStore;

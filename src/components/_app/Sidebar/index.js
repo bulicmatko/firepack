@@ -12,9 +12,7 @@ import Logo from './Logo/index';
 import Menu from './Menu/index';
 import Profile from './Profile/index';
 
-import UserStore from '../../../stores/UserStore';
-
-import Config from '../../../Config';
+import Stores from '../../../stores';
 
 const Style = require('./style.scss');
 
@@ -27,23 +25,23 @@ class Sidebar extends Component {
         super(props);
 
         this.state = {
-            user: UserStore.getUser()
+            user: Stores.UserStore.getUser()
         }
 
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
 
     componentDidMount () {
-        UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     componentWillUnmount () {
-        UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     _handleUserStoreDataChange () {
         this.setState({
-            user: UserStore.getUser()
+            user: Stores.UserStore.getUser()
         });
     }
 
@@ -69,7 +67,7 @@ class Sidebar extends Component {
             }
         ];
 
-        menu.push(Config.sidebarMenu);
+        // menu.push(Config.sidebarMenu);
 
         return (
             <Menu menu={menu}/>

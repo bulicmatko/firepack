@@ -5,9 +5,8 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import Firebase from '../_lib/Firebase';
-import BaseStore from '../_lib/BaseStore';
-import UserEvents from '../events/UserEvents';
+import BaseStore from '../../_lib/BaseStore';
+import UserEvents from '../../events/UserEvents';
 
 /**
  *  User Store
@@ -19,7 +18,7 @@ class UserStore extends BaseStore {
 
         this._user = {};
 
-        this._DB = Firebase;
+        this._DB = args.firebase;
         this._DB.onAuth(this._handleAuth.bind(this));
     }
 
@@ -63,4 +62,4 @@ class UserStore extends BaseStore {
 }
 
 // Export User Store
-export default new UserStore();
+export default UserStore;

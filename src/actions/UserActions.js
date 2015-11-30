@@ -5,9 +5,8 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import UserServices from '../services/UserServices.js';
+// import UserServices from '../services/UserServices/';
+import {Services} from '../services';
 
 /**
  *  User Actions
@@ -15,11 +14,11 @@ import UserServices from '../services/UserServices.js';
 class UserActions {
 
     authenticateUser (email, password) {
-        UserServices.authenticateUser(email, password);
+        Services.UserServices.authenticateUser(email, password);
     }
 
     unauthenticateUser () {
-        UserServices.unauthenticateUser();
+        Services.UserServices.unauthenticateUser();
     }
 
 }

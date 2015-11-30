@@ -5,18 +5,19 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import Firebase from '../_lib/Firebase';
-import Dispatcher from '../_lib/Dispatcher';
-import ProfileEvents from '../events/ProfileEvents';
-import FirebaseCodes from '../constants/FirebaseCodes';
-import NotificationTypes from '../constants/NotificationTypes';
+import Dispatcher from '../../_lib/Dispatcher';
+import ProfileEvents from '../../events/ProfileEvents';
+import FirebaseCodes from '../../constants/FirebaseCodes';
+import NotificationTypes from '../../constants/NotificationTypes';
 
 /**
  *  Profile Services
  */
 class ProfileServices {
+
+    constructor (args) {
+        this._DB = args.firebase;
+    }
 
     updateProfile (patch) {
         Dispatcher.dispatch({
@@ -38,4 +39,4 @@ class ProfileServices {
 }
 
 // Export Profile Services
-export default new ProfileServices();
+export default ProfileServices;

@@ -10,15 +10,22 @@ import React, { Component } from 'react';
 import TopbarComponent from '../_app/Topbar/index';
 import SidebarComponent from '../_app/Sidebar/index';
 import NotificationsComponent from '../_app/Notifications/index';
-import UserStore from '../../stores/UserStore';
+// import UserStore from '../../stores/UserStore';
+import Stores from '../../stores';
 
 /**
  *  Layout
  */
 class Layout extends Component {
 
+    constructor (props) {
+        super(props);
+
+        this.UserStore = Stores.UserStore;
+    }
+
     _renderTopbar () {
-        return UserStore.isUserAuthenticated()
+        return this.UserStore.isUserAuthenticated()
             ? (
                 <div className="Firebox--Topbar">
                     <TopbarComponent/>
@@ -27,7 +34,7 @@ class Layout extends Component {
     }
 
     _renderSidebar () {
-        return UserStore.isUserAuthenticated()
+        return this.UserStore.isUserAuthenticated()
             ? (
                 <aside className="Firebox--Sidebar">
                     <SidebarComponent/>
@@ -36,7 +43,7 @@ class Layout extends Component {
     }
 
     _renderMain () {
-        return UserStore.isUserAuthenticated()
+        return this.UserStore.isUserAuthenticated()
             ? (
                 <div className="Firebox--Main">
                     {this.props.children}

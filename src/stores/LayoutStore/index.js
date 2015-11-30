@@ -1,19 +1,17 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Reset Password Store
+    Layout Store
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
-import BaseStore from '../_lib/BaseStore';
-import AccountEvents from '../events/AccountEvents';
+import BaseStore from '../../_lib/BaseStore';
+import UserEvents from '../../events/UserEvents';
 
 /**
- *  Reset Password Store
+ *  Layout Store
  */
-class ResetPasswordStore extends BaseStore {
+class LayoutStore extends BaseStore {
 
     constructor (args) {
         super(args);
@@ -55,17 +53,17 @@ class ResetPasswordStore extends BaseStore {
 
     _handleDispatcherEvent (payload) {
         switch (payload.event) {
-            case AccountEvents.PASSWORD_RESET_STARTED:
+            case UserEvents.USER_AUTHENTIFICATION_STARTED:
                 this._resetError();
                 this._setLoadingState(true);
                 this._emitChange();
                 break;
-            case AccountEvents.PASSWORD_RESET_FAILED:
+            case UserEvents.USER_AUTHENTIFICATION_FAILED:
                 this._setError(payload.data);
                 this._setLoadingState(false);
                 this._emitChange();
                 break;
-            case AccountEvents.PASSWORD_RESET:
+            case UserEvents.USER_AUTHENTICATED:
                 this._resetError();
                 this._setLoadingState(false);
                 this._emitChange();
@@ -75,5 +73,5 @@ class ResetPasswordStore extends BaseStore {
 
 }
 
-// Export Reset Password Store
-export default new ResetPasswordStore();
+// Export Layout Store
+export default LayoutStore;

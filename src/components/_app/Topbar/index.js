@@ -12,7 +12,7 @@ import ToggleButton from './ToggleButton/index';
 import SearchBox from './SearchBox/index';
 import OptionsBox from './OptionsBox/index';
 import ProfileBox from './ProfileBox/index';
-import UserStore from '../../../stores/UserStore';
+import Stores from '../../../stores';
 
 const Style = require('./style.scss');
 
@@ -25,23 +25,23 @@ class Topbar extends Component {
         super(props);
 
         this.state = {
-            user: UserStore.getUser()
+            user: Stores.UserStore.getUser()
         }
 
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
 
     componentDidMount () {
-        UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     componentWillUnmount () {
-        UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     _handleUserStoreDataChange () {
         this.setState({
-            user: UserStore.getUser()
+            user: Stores.UserStore.getUser()
         });
     }
 

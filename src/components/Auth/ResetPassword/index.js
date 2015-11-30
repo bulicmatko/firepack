@@ -5,11 +5,11 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import AccountActions from '../../../actions/AccountActions.js';
+import AccountActions from '../../../actions/AccountActions';
 import Input from '../../../_lib/components/Form/Input';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import ResetPasswordStore from '../../../stores/ResetPasswordStore.js';
+import Stores from '../../../stores';
 import { Link } from 'react-router';
 
 /**
@@ -22,8 +22,8 @@ class ResetPassword extends Component {
 
         this.state = {
             email: '',
-            error: ResetPasswordStore.getError(),
-            isLoading: ResetPasswordStore.getLoadingState()
+            error: Stores.ResetPasswordStore.getError(),
+            isLoading: Stores.ResetPasswordStore.getLoadingState()
         };
 
         this.__handleResetPasswordStoreDataChange = this._handleResetPasswordStoreDataChange.bind(this);
@@ -35,18 +35,18 @@ class ResetPassword extends Component {
 
     componentDidMount () {
         this._focusInputField('email');
-        ResetPasswordStore.addDataChangeListener(this.__handleResetPasswordStoreDataChange);
+        Stores.ResetPasswordStore.addDataChangeListener(this.__handleResetPasswordStoreDataChange);
     }
 
     componentWillUnmount () {
-        ResetPasswordStore.removeDataChangeListener(this.__handleResetPasswordStoreDataChange);
-        ResetPasswordStore.reset();
+        Stores.ResetPasswordStore.removeDataChangeListener(this.__handleResetPasswordStoreDataChange);
+        Stores.ResetPasswordStore.reset();
     }
 
     _handleResetPasswordStoreDataChange () {
         this.setState({
-            error: ResetPasswordStore.getError(),
-            isLoading: ResetPasswordStore.getLoadingState()
+            error: Stores.ResetPasswordStore.getError(),
+            isLoading: Stores.ResetPasswordStore.getLoadingState()
         }, () => this._focusInputField(this.state.error.field));
     }
 
