@@ -26,7 +26,7 @@ class Layout extends Component {
     _renderTopbar () {
         return this.UserStore.isUserAuthenticated()
             ? (
-                <div className="Firebox--Topbar">
+                <div className="Firepack--Topbar">
                     <TopbarComponent/>
                 </div>
             ) : null;
@@ -35,7 +35,7 @@ class Layout extends Component {
     _renderSidebar () {
         return this.UserStore.isUserAuthenticated()
             ? (
-                <aside className="Firebox--Sidebar">
+                <aside className="Firepack--Sidebar">
                     <SidebarComponent/>
                 </aside>
             ) : null;
@@ -44,11 +44,11 @@ class Layout extends Component {
     _renderMain () {
         return this.UserStore.isUserAuthenticated()
             ? (
-                <div className="Firebox--Main">
+                <div className="Firepack--Main">
                     {this.props.children}
                 </div>
             ) : (
-                <div className="Firebox--Auth">
+                <div className="Firepack--Auth">
                     {this.props.children}
                 </div>
             );
@@ -56,7 +56,7 @@ class Layout extends Component {
 
     render () {
         return (
-            <div className="Firebox">
+            <div className="Firepack">
                 {this._renderTopbar()}
                 {this._renderSidebar()}
                 {this._renderMain()}

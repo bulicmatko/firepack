@@ -20,7 +20,7 @@ class Logo extends Component {
     };
 
     static defaultProps = {
-        title: 'Firebox'
+        title: 'Firepack'
     };
 
     shouldComponentUpdate (nextProps) {

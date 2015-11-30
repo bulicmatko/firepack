@@ -15,10 +15,10 @@ html, body {
 }
 
 
-//  Firebox
+//  Firepack
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.Firebox {
+.Firepack {
   position: absolute; overflow: hidden;
   top: 0; right: 0; bottom: 0; left: 0;
 
@@ -26,19 +26,19 @@ html, body {
 }
 
 
-//  Firebox Auth
+//  Firepack Auth
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.Firebox--Auth {
+.Firepack--Auth {
   position: absolute; overflow: auto;
   top: 0; right: 0; bottom: 0; left: 0;
 }
 
 
-//  Firebox Topbar
+//  Firepack Topbar
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.Firebox--Topbar {
+.Firepack--Topbar {
   position: absolute; overflow: auto; z-index: 1;
   top: 0; right: 0; bottom: auto; left: rem(220); height: rem(60);
 
@@ -55,10 +55,10 @@ html, body {
 }
 
 
-//  Firebox Sidebar
+//  Firepack Sidebar
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.Firebox--Sidebar {
+.Firepack--Sidebar {
   @include transition(transform .3s ease-in);
 
   position: absolute; overflow: auto; z-index: 2;
@@ -79,10 +79,10 @@ html, body {
   }
 }
 
-//  Firebox Main
+//  Firepack Main
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.Firebox--Main {
+.Firepack--Main {
   position: absolute; overflow: auto;
   top: rem(60); right: 0; bottom: 0; left: rem(220);
 
