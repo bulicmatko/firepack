@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react';
 
-import Menu from '../_shared/Menu';
+import Menu from '../../_shared/Menu';
 
 /**
  *  Layout

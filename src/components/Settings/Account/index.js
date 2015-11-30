@@ -15,8 +15,8 @@ class Account extends Component {
     render () {
         return (
             <div>
-                <h1>Settings Account</h1>
-                <p>Welcome to Settings Account.</p>
+                <h1>Account</h1>
+                <p>Welcome to Account.</p>
             </div>
         );
     }

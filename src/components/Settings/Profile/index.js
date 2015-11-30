@@ -15,8 +15,8 @@ class Profile extends Component {
     render () {
         return (
             <div>
-                <h1>Settings Profile</h1>
-                <p>Welcome to Settings Profile.</p>
+                <h1>Profile</h1>
+                <p>Welcome to Profile.</p>
             </div>
         );
     }

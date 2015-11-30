@@ -8,11 +8,12 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 
-import Logo from './Logo/index';
-import Menu from './Menu/index';
-import Profile from './Profile/index';
+import Logo from './Logo';
+import Menu from './Menu';
+import Profile from './Profile';
 
 import Stores from '../../../stores';
+import config from '../../../config';
 
 const Style = require('./style.scss');
 
@@ -67,7 +68,7 @@ class Sidebar extends Component {
             }
         ];
 
-        // menu.push(Config.sidebarMenu);
+        menu.push(config.sidebarMenu);
 
         return (
             <Menu menu={menu}/>

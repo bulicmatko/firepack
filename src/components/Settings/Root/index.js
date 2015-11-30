@@ -15,8 +15,8 @@ class Root extends Component {
     render () {
         return (
             <div>
-                <h1>Settings Root</h1>
-                <p>Welcome to Settings Root.</p>
+                <h1>Root</h1>
+                <p>Welcome to Root.</p>
             </div>
         );
     }

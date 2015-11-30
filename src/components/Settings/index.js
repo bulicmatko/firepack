@@ -1,7 +1,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Router
+    Settings - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -10,20 +10,20 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Layout from './Layout';
-import RootComponent from './Root/index';
+import Root from './Root';
+import Account from './Account';
+import Profile from './Profile';
 
 /**
- *  Router
+ *  Route Constructor
  */
-const Router = ({basePath = 'apps', onEnter = _.noop, children = null}) => {
+export default ({basePath = 'settings', onEnter = _.noop}) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
-            <IndexRoute onEnter={onEnter} component={RootComponent}/>
+            <IndexRoute onEnter={onEnter} component={Root}/>
 
-            {children}
+            <Route path="account" onEnter={onEnter} component={Account}/>
+            <Route path="profile" onEnter={onEnter} component={Profile}/>
         </Route>
     );
 };
-
-// Export Router
-export default Router;

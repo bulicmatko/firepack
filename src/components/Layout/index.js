@@ -7,10 +7,9 @@
 
 import React, { Component } from 'react';
 
-import TopbarComponent from '../_app/Topbar/index';
-import SidebarComponent from '../_app/Sidebar/index';
-import NotificationsComponent from '../_app/Notifications/index';
-// import UserStore from '../../stores/UserStore';
+import TopbarComponent from '../_app/Topbar';
+import SidebarComponent from '../_app/Sidebar';
+import NotificationsComponent from '../_app/Notifications';
 import Stores from '../../stores';
 
 /**

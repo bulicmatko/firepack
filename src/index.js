@@ -11,6 +11,7 @@ import Firebase from 'firebase';
 import { initStores } from './stores';
 import { initServices } from './services';
 
+import config from './config';
 import Main from './Main';
 
 /**
@@ -40,7 +41,11 @@ class Firepack extends Component {
     };
 
     render() {
-        const { appBasePath, firebaseUrl } = this.props;
+        const { appBasePath, firebaseUrl, sidebarMenu } = this.props;
+
+        config.appBasePath = appBasePath;
+        config.firebaseUrl = firebaseUrl;
+        config.sidebarMenu = sidebarMenu;
 
         const firebase = new Firebase(firebaseUrl);
 
@@ -55,6 +60,11 @@ class Firepack extends Component {
     }
 
 }
+
+
+// export AppWrap;
+// export AppSidebar;
+// export AppMain;
 
 // Export Firepack
 export default Firepack;

@@ -5,18 +5,14 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import _ from 'lodash';
 import React from 'react';
 import { Route } from 'react-router';
 
 import Layout from './Layout';
 
 /**
- *  Router
+ *  Route Constructor
  */
-const Router = ({basePath = 'dashboard', onEnter = _.noop}) => {
-    return <Route path={basePath} onEnter={onEnter} component={Layout}/>;
+export default ({basePath = '*'}) => {
+    return <Route path={basePath} component={Layout}/>;
 };
-
-// Export Router
-export default Router;

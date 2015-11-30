@@ -8,10 +8,10 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 
-import ToggleButton from './ToggleButton/index';
-import SearchBox from './SearchBox/index';
-import OptionsBox from './OptionsBox/index';
-import ProfileBox from './ProfileBox/index';
+import ToggleButton from './ToggleButton';
+import SearchBox from './SearchBox';
+import OptionsBox from './OptionsBox';
+import ProfileBox from './ProfileBox';
 import Stores from '../../../stores';
 
 const Style = require('./style.scss');

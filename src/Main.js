@@ -10,11 +10,11 @@ import { createHistory } from 'history';
 import { Router, Route, Redirect } from 'react-router';
 
 import Layout from './components/Layout';
-import AuthRouter from './components/Auth/Router';
-import DashboardRouter from './components/Dashboard/Router';
-import SettingsRouter from './components/Settings/Router';
-import AppsRouter from './components/Apps/Router';
-import ErrorRouter from './components/Error/Router';
+import Auth from './components/Auth';
+import Dashboard from './components/Dashboard';
+import Settings from './components/Settings';
+import Apps from './components/Apps';
+import Error404 from './components/Error404';
 
 import Stores from './stores';
 
@@ -40,7 +40,11 @@ class Main extends Component {
     };
 
     _userShouldBeGuest (nextState, replaceState) {
-        const { appBasePath } = this.props;
+        let { appBasePath } = this.props;
+
+        if (appBasePath === '/') {
+            appBasePath = '';
+        }
 
         if (!this.UserStore.isUserGuest()) {
             replaceState({}, `${appBasePath}/dashboard`);
@@ -48,7 +52,11 @@ class Main extends Component {
     }
 
     _userShouldBeAuthenticated (nextState, replaceState) {
-        const { appBasePath } = this.props;
+        let { appBasePath } = this.props;
+
+        if (appBasePath === '/') {
+            appBasePath = '';
+        }
 
         if (!this.UserStore.isUserAuthenticated()) {
             replaceState({nextPathname: nextState.location.pathname}, `${appBasePath}/auth`);
@@ -56,21 +64,25 @@ class Main extends Component {
     }
 
     render() {
-        const { appBasePath } = this.props;
+        let { appBasePath } = this.props;
+
+        if (appBasePath === '') {
+            appBasePath = '/';
+        }
 
         return (
             <Router history={createHistory()}>
                 <Redirect from={appBasePath} to={`${appBasePath}/auth`}/>
 
                 <Route path={appBasePath} component={Layout}>
-                    {AuthRouter({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
+                    {Auth({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
 
-                    {DashboardRouter({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
-                    {SettingsRouter({basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {Dashboard({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {Settings({basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this)})}
 
-                    {AppsRouter({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
+                    {Apps({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
 
-                    {ErrorRouter({basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {Error404({basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this)})}
                 </Route>
             </Router>
         );

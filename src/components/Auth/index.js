@@ -10,14 +10,14 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Layout from './Layout';
-import SignInComponent from './SignIn/index';
-import SignUpComponent from './SignUp/index';
-import ResetPasswordComponent from './ResetPassword/index';
+import SignInComponent from './SignIn';
+import SignUpComponent from './SignUp';
+import ResetPasswordComponent from './ResetPassword';
 
 /**
- *  Router
+ *  Route Constructor
  */
-const Router = ({basePath = 'auth', onEnter = _.noop}) => {
+export default ({basePath = 'auth', onEnter = _.noop}) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
             <IndexRoute onEnter={onEnter} component={SignInComponent}/>
@@ -28,6 +28,3 @@ const Router = ({basePath = 'auth', onEnter = _.noop}) => {
         </Route>
     );
 };
-
-// Export Router
-export default Router;
