@@ -3,6 +3,13 @@
 > [Firebase](https://www.firebase.com/) application wrapper built with [React](http://facebook.github.io/react/),
 [React router](https://github.com/rackt/react-router) and [Flux](https://facebook.github.io/flux/).
 
+[![npm version](https://img.shields.io/npm/v/firepack.svg?style=flat-square)](https://www.npmjs.com/package/firepack)
+[![NPM Status](http://img.shields.io/npm/dm/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
+
+[![Total Downloads](https://poser.pugx.org/bulicmatko/firepack/d/total.svg)](https://packagist.org/packages/bulicmatko/firepack)
+[![License](https://poser.pugx.org/bulicmatko/firepack/license.svg)](https://packagist.org/packages/bulicmatko/firepack)
+
+
 ### DISCLAIMER
 **Firepack** is in its **early phase of development** and can be a **subject of breaking changes** in near future.
 
