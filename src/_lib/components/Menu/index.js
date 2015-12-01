@@ -5,7 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 /**
@@ -13,11 +13,13 @@ import { Link } from 'react-router';
  */
 class Menu extends Component {
 
-    static get propTypes () {
-        return {
-            menu: React.PropTypes.array.isRequired
-        };
-    }
+    static propTypes = {
+        menu: PropTypes.array.isRequired
+    };
+
+    static defaultProps = {
+        menu: []
+    };
 
     render () {
         return (
@@ -31,7 +33,8 @@ class Menu extends Component {
                                     return (
                                         <li className="item" key={index}>
                                             <Link to={link.route} activeClassName="isActive">
-                                                {link.title}
+                                                <i className={`fa fa-fw fa-${link.icon}`}></i>
+                                                <span>{link.title}</span>
                                             </Link>
                                         </li>
                                     );

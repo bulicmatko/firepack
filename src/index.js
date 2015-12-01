@@ -12,7 +12,10 @@ import { initServices } from './app/services';
 
 import config from './config';
 import App from './app';
-import Menu from './app/components/_shared/Menu';
+
+import _AppWrap from './_lib/components/AppWrap';
+import _AppSidebar from './_lib/components/AppSidebar';
+import _AppMain from './_lib/components/AppMain';
 
 /**
  *  Firepack
@@ -50,14 +53,9 @@ class Firepack extends Component {
 
 }
 
-
-// export Dispatcher;
-// export BaseStore;
-
-
-// export AppWrap;
-export const SidebarMenu = Menu;
-// export AppMain;
+export const AppWrap = _AppWrap;
+export const AppSidebar = _AppSidebar;
+export const AppMain = _AppMain;
 
 // Export Firepack
 export default Firepack;
