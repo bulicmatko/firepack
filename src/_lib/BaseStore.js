@@ -5,8 +5,6 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
 import { EventEmitter } from 'events';
 import Dispatcher from './Dispatcher';
 

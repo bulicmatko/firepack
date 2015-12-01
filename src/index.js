@@ -8,12 +8,12 @@
 import React, { Component, PropTypes } from 'react';
 import Firebase from 'firebase';
 
-import { initStores } from './stores';
-import { initServices } from './services';
+import { initStores } from './app/stores';
+import { initServices } from './app/services';
 
 import config from './config';
-import Main from './Main';
-import Menu from './components/_shared/Menu';
+import App from './app';
+import Menu from './app/components/_shared/Menu';
 
 /**
  *  Firepack
@@ -45,9 +45,9 @@ class Firepack extends Component {
         initServices({firebase});
 
         return (
-            <Main appBasePath={appBasePath}>
+            <App appBasePath={appBasePath}>
                 {this.props.children}
-            </Main>
+            </App>
         );
     }
 

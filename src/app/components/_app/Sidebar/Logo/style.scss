@@ -1,0 +1,31 @@
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Logo
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@import '../../../../../_lib/styles/_core/all';
+
+/**
+ *  Logo
+ */
+.Logo {
+  @include transition(color .1s ease-in);
+
+  font-size: rem(24); line-height: rem(36);
+  color: map-get($COLORS, Sterling);
+
+  display: block;
+  padding: rem(12) rem(20);
+
+  &:hover, &:focus {
+    color: map-get($COLORS, Heather);
+
+    background-color: map-get($COLORS, Jet);
+  }
+
+  > span {
+    margin-left: rem(15);
+  }
+}

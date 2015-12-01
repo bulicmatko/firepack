@@ -5,8 +5,6 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
 import { Dispatcher } from 'flux';
 
 /**

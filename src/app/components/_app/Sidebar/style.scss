@@ -1,0 +1,27 @@
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    Sidebar
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+@import '../../../../_lib/styles/_core/all';
+
+/**
+ *  Sidebar
+ */
+.Sidebar {
+  .Sidebar--Logo {
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: auto; left: 0;
+  }
+
+  .Sidebar--Menu {
+    margin-top: rem(60);
+  }
+
+  .Sidebar--Profile {
+    position: absolute; z-index: 1;
+    top: auto; right: 0; bottom: 0; left: 0;
+  }
+}
