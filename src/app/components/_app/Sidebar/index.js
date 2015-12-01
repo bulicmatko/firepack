@@ -68,7 +68,7 @@ class Sidebar extends Component {
             }
         ];
 
-        menu.push(config.sidebarMenu);
+        menu.push(...config.sidebarMenu);
 
         return (
             <Menu menu={menu}/>

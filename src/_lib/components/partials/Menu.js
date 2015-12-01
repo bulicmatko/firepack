@@ -5,13 +5,13 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 /**
  *  Menu
  */
-class Menu extends React.Component {
+class Menu extends Component {
 
     static get propTypes () {
         return {

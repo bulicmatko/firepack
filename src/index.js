@@ -22,7 +22,7 @@ class Firepack extends Component {
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
         firebaseUrl: PropTypes.string.isRequired,
-        sidebarMenu: PropTypes.object.isRequired
+        sidebarMenu: PropTypes.array.isRequired
     };
 
     static defaultProps = {

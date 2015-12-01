@@ -6,7 +6,8 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes } from 'react';
-import { createHistory } from 'history';
+// import { createHistory } from 'history';
+import createHistory from 'history/lib/createHashHistory';
 import { Router, Route, Redirect } from 'react-router';
 
 import Layout from './components/Layout';
@@ -71,7 +72,7 @@ class Main extends Component {
         }
 
         return (
-            <Router history={createHistory()}>
+            <Router history={createHistory({queryKey: false})}>
                 <Redirect from={appBasePath} to={`${appBasePath}/auth`}/>
 
                 <Route path={appBasePath} component={Layout}>
