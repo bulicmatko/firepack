@@ -42,5 +42,9 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .App--Main {
-  margin-left: rem(200); padding-top: rem(5);
+  margin-left: rem(200); padding: rem(5) rem(30);
+
+  &.no-sidebar {
+    margin-left: 0;
+  }
 }

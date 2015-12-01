@@ -19,7 +19,7 @@ import Profile from './Profile';
  */
 export default ({basePath = 'settings', onEnter = _.noop}) => {
     return (
-        <Route path={basePath} onEnter={onEnter} component={Layout}>
+        <Route path={basePath} component={Layout}>
             <IndexRoute onEnter={onEnter} component={Root}/>
 
             <Route path="account" onEnter={onEnter} component={Account}/>

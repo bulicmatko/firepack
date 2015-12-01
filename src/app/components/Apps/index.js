@@ -1,7 +1,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Router
+    Apps - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -10,7 +10,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Layout from './Layout';
-import RootComponent from './Root';
+import Root from './Root';
 
 /**
  *  Route Constructor
@@ -18,7 +18,7 @@ import RootComponent from './Root';
 export default ({basePath = 'apps', onEnter = _.noop, children = null}) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
-            <IndexRoute onEnter={onEnter} component={RootComponent}/>
+            <IndexRoute onEnter={onEnter} component={Root}/>
 
             {children}
         </Route>
