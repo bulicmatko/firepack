@@ -5,14 +5,8 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Lodash
 import _ from 'lodash';
-
-// Class Names
 import ClassNames from 'classnames';
-
-// React, Component, PropTypes
 import React, { Component, PropTypes } from 'react';
 
 /**

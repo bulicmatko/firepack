@@ -5,6 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+import BaseService from '../../../_lib/BaseService';
 import Dispatcher from '../../../_lib/Dispatcher';
 import UserEvents from '../../events/UserEvents';
 import FirebaseCodes from '../../constants/FirebaseCodes';
@@ -13,10 +14,10 @@ import NotificationTypes from '../../constants/NotificationTypes';
 /**
  *  User Services
  */
-class UserServices {
+class UserServices extends BaseService {
 
     constructor (args) {
-        this._DB = args.firebase;
+        super(args);
     }
 
     authenticateUser (email, password) {

@@ -6,7 +6,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes } from 'react';
-import Firebase from 'firebase';
 
 import { initStores } from './app/stores';
 import { initServices } from './app/services';
@@ -39,10 +38,8 @@ class Firepack extends Component {
         config.firebaseUrl = firebaseUrl;
         config.sidebarMenu = sidebarMenu;
 
-        const firebase = new Firebase(firebaseUrl);
-
-        initStores({firebase});
-        initServices({firebase});
+        initStores({firebaseUrl});
+        initServices({firebaseUrl});
 
         return (
             <App appBasePath={appBasePath}>

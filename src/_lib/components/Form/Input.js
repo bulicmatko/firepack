@@ -5,14 +5,9 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
 import _ from 'lodash';
 import ClassNames from 'classnames';
 import React, { Component, PropTypes } from 'react';
-
-// VelocityTransitionGroup
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { VelocityTransitionGroup } from 'velocity-react';
 
 /**

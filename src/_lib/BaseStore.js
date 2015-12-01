@@ -5,6 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+import Firebase from 'firebase';
 import { EventEmitter } from 'events';
 import Dispatcher from './Dispatcher';
 
@@ -15,6 +16,14 @@ const DATA_CHANGE = 'DATA_CHANGE';
  *  Base Store
  */
 class BaseStore extends EventEmitter {
+
+    constructor (args) {
+        super(args);
+
+        const { firebaseUrl } = args;
+
+        this._DB = new Firebase(firebaseUrl);
+    }
 
     _onDispatcherEvent (callback) {
         this._dispatchToken = Dispatcher.register(callback);

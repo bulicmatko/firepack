@@ -5,6 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+import BaseService from '../../../_lib/BaseService';
 import Dispatcher from '../../../_lib/Dispatcher';
 import ProfileEvents from '../../events/ProfileEvents';
 import FirebaseCodes from '../../constants/FirebaseCodes';
@@ -13,10 +14,10 @@ import NotificationTypes from '../../constants/NotificationTypes';
 /**
  *  Profile Services
  */
-class ProfileServices {
+class ProfileServices extends BaseService {
 
     constructor (args) {
-        this._DB = args.firebase;
+        super(args);
     }
 
     updateProfile (patch) {

@@ -5,11 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// React
 import React from 'react';
-
-// Link
 import { Link } from 'react-router';
 
 /**

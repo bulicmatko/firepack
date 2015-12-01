@@ -11,10 +11,10 @@ import UserServices from './UserServices';
 
 const Services = {};
 
-export const initServices = ({firebase = null}) => {
-    Services.AccountServices = new AccountServices({firebase: firebase});
-    Services.ProfileServices = new ProfileServices({firebase: firebase});
-    Services.UserServices = new UserServices({firebase: firebase});
+export const initServices = ({firebaseUrl = null}) => {
+    Services.AccountServices = new AccountServices({firebaseUrl: firebaseUrl});
+    Services.ProfileServices = new ProfileServices({firebaseUrl: firebaseUrl});
+    Services.UserServices = new UserServices({firebaseUrl: firebaseUrl});
 };
 
 export default Services;

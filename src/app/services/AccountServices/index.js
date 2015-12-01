@@ -5,6 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+import BaseService from '../../../_lib/BaseService';
 import Dispatcher from '../../../_lib/Dispatcher';
 import AccountEvents from '../../events/AccountEvents';
 import FirebaseCodes from '../../constants/FirebaseCodes';
@@ -13,10 +14,10 @@ import NotificationTypes from '../../constants/NotificationTypes';
 /**
  *  Account Services
  */
-class AccountServices {
+class AccountServices extends BaseService {
 
     constructor (args) {
-        this._DB = args.firebase;
+        super(args);
     }
 
     createAccount (email, password) {

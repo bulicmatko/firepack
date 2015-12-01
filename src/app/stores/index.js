@@ -14,13 +14,13 @@ import UserStore from './UserStore';
 
 const Stores = {};
 
-export const initStores = ({firebase = null}) => {
-    Stores.LayoutStore = new LayoutStore({firebase: firebase});
-    Stores.NotificationsStore = new NotificationsStore({firebase: firebase});
-    Stores.ResetPasswordStore = new ResetPasswordStore({firebase: firebase});
-    Stores.SignInStore = new SignInStore({firebase: firebase});
-    Stores.SignUpStore = new SignUpStore({firebase: firebase});
-    Stores.UserStore = new UserStore({firebase: firebase});
+export const initStores = ({firebaseUrl = null}) => {
+    Stores.LayoutStore = new LayoutStore({firebaseUrl: firebaseUrl});
+    Stores.NotificationsStore = new NotificationsStore({firebaseUrl: firebaseUrl});
+    Stores.ResetPasswordStore = new ResetPasswordStore({firebaseUrl: firebaseUrl});
+    Stores.SignInStore = new SignInStore({firebaseUrl: firebaseUrl});
+    Stores.SignUpStore = new SignUpStore({firebaseUrl: firebaseUrl});
+    Stores.UserStore = new UserStore({firebaseUrl: firebaseUrl});
 };
 
 export default Stores;
