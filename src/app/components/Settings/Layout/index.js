@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react';
 
-import Menu from '../../_shared/Menu';
+import Menu from '../../../../_lib/components/Menu';
 
 /**
  *  Layout
@@ -36,7 +36,7 @@ class Layout extends Component {
                                         title: 'Profile',
                                         route: '/settings/profile'
                                     }, {
-                                        icon: 'dollar',
+                                        icon: 'credit-card',
                                         title: 'Billing',
                                         route: '/settings/billing'
                                     }, {

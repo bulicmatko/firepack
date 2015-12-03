@@ -7,7 +7,7 @@
 
 import _ from 'lodash';
 import React, { Component } from 'react';
-import {Stores1} from './stores';
+import { Stores } from './stores';
 
 const Style = require('./style.scss');
 
@@ -20,23 +20,23 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            user: Stores1.UserStore.getUser()
+            user: Stores.UserStore.getUser()
         }
 
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
 
     componentDidMount () {
-        Stores1.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     componentWillUnmount () {
-        Stores1.UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
+        Stores.UserStore.removeDataChangeListener(this.__handleUserStoreDataChange);
     }
 
     _handleUserStoreDataChange () {
         this.setState({
-            user: Stores1.UserStore.getUser()
+            user: Stores.UserStore.getUser()
         });
     }
 

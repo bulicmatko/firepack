@@ -1,42 +1,10 @@
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//  Apps
+//  App Main
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-//  App
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.App {
-  @include clearfix();
-
-  margin: 0 auto; padding: 0;
-  background-color: map-get($COLORS, White);
-
-  max-width: rem(1200);
-
-  border-radius: rem(2);
-  box-shadow: 0 0 rem(1) map-get($COLORS, Pearl);
-}
-
-
-//  App Sidebar
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-.App--Sidebar {
-  float: left;
-  width: rem(200);
-
-  > .title {
-    font-size: rem(20); line-height: rem(30);
-    padding: rem(15);
-
-    > span {
-      margin-left: rem(10);
-    }
-  }
-}
-
+@import '../../../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../../styles/_core/all';
 
 //  App Main
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

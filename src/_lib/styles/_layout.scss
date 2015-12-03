@@ -23,6 +23,26 @@ html, body {
   top: 0; right: 0; bottom: 0; left: 0;
 
   background-color: map-get($COLORS, Lilia);
+
+
+  &.hide-sidebar {
+
+    .Firepack--Topbar {
+      left: 0;
+    }
+
+    .Firepack--Sidebar {
+      @include transform(translateX(-100%));
+    }
+
+    .Firepack--Main {
+      left: 0;
+    }
+  }
+
+  // &.overlay-sidebar .Firepack-Sidebar {
+  //   @include transform(translateX(0));
+  // }
 }
 
 
@@ -45,10 +65,6 @@ html, body {
   background-color: map-get($COLORS, White);
   box-shadow: 0 0 rem(1) map-get($COLORS, Pearl);
 
-  .hide-sidebar & {
-    left: 0;
-  }
-
   @include media-to ($BREAKPOINTS, M) {
     left: 0;
   }
@@ -59,20 +75,10 @@ html, body {
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 .Firepack--Sidebar {
-  @include transition(transform .3s ease-in);
-
-  position: absolute; overflow: auto; z-index: 2;
+  position: absolute; overflow: auto; z-index: 1;
   top: 0; right: auto; bottom: 0; left: 0; width: rem(220);
 
   background-color: map-get($COLORS, Jet);
-
-  .hide-sidebar & {
-    @include transform(translateX(-100%));
-  }
-
-  .overlay-sidebar & {
-    @include transform(translateX(0));
-  }
 
   @include media-to ($BREAKPOINTS, M) {
     @include transform(translateX(-100%));
@@ -87,10 +93,6 @@ html, body {
   top: rem(60); right: 0; bottom: 0; left: rem(220);
 
   padding: rem(25);
-
-  .hide-sidebar & {
-    left: 0;
-  }
 
   @include media-to ($BREAKPOINTS, M) {
     left: 0;

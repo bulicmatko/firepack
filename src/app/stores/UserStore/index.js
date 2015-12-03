@@ -18,7 +18,6 @@ class UserStore extends BaseStore {
 
         this._user = {};
 
-        // this._DB = args.firebase;
         this._DB.onAuth(this._handleAuth.bind(this));
     }
 

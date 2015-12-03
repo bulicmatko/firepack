@@ -1,22 +1,20 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    App Main
+    App Wrap
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component } from 'react';
 
-const Style = require('./style.scss');
-
 /**
- *  App Main
+ *  App Wrap
  */
-class AppMain extends Component {
+class AppWrap extends Component {
 
     render () {
         return (
-            <div className="App--Main">
+            <div className="App">
                 {this.props.children}
             </div>
         );
@@ -24,5 +22,5 @@ class AppMain extends Component {
 
 }
 
-// Export App Main
-export default AppMain;
+// Export App Wrap
+export default AppWrap;

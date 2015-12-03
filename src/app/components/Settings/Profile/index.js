@@ -15,8 +15,16 @@ class Profile extends Component {
     render () {
         return (
             <div>
-                <h1>Profile</h1>
-                <p>Welcome to Profile.</p>
+                <div className="App--Topbar">
+                    <h1 className="title">
+                        <i className="fa fa-fw fa-user"></i>
+                        <span>Profile</span>
+                    </h1>
+                </div>
+                <div className="App--Content">
+                    <h3>Profile</h3>
+                    <p>Welcome to Profile.</p>
+                </div>
             </div>
         );
     }

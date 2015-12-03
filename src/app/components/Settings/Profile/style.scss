@@ -1,0 +1,20 @@
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Menu
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../../../../../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../../_lib/styles/_core/all';
+
+
+//  Style
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.root-page {
+  text-align: center;
+  color: map-get($COLORS, Pearl);
+}

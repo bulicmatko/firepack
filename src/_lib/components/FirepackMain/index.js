@@ -7,8 +7,6 @@
 
 import React, { Component } from 'react';
 
-const Style = require('./style.scss');
-
 /**
  *  App Main
  */

@@ -5,12 +5,11 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import Input from '../../../../_lib/components/Form/Input';
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-// import SignInStore from '../../../stores/SignInStore';
-import UserActions from '../../../actions/UserActions';
 import { Link } from 'react-router';
+import Input from '../../../../_lib/components/Form/Input';
+import UserActions from '../../../actions/UserActions';
 import Stores from '../../../stores';
 
 /**
