@@ -11,7 +11,7 @@ import AppWrap from '../../../../_lib/components/AppWrap';
 import AppSidebar from '../../../../_lib/components/AppSidebar';
 import AppMain from '../../../../_lib/components/AppMain';
 import Menu from '../../../../_lib/components/Menu';
-import config from '../../../../config';
+// import config from '../../../../config';
 
 /**
  *  Root
@@ -19,11 +19,12 @@ import config from '../../../../config';
 class Root extends Component {
 
     render () {
-        const { sidebarMenu } = config;
+        // const { sidebarMenu } = config;
 
+        // menu={sidebarMenu}
         return (
             <AppWrap>
-                <AppSidebar menu={sidebarMenu}/>
+                <AppSidebar/>
                 <AppMain>
                     <div>Hello :)</div>
                 </AppMain>

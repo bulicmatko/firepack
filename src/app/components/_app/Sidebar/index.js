@@ -13,7 +13,7 @@ import Menu from './Menu';
 import Profile from './Profile';
 
 import Stores from '../../../stores';
-import config from '../../../../config';
+// import config from '../../../../config';
 
 const Style = require('./style.scss');
 
@@ -68,7 +68,7 @@ class Sidebar extends Component {
             }
         ];
 
-        menu.push(...config.sidebarMenu);
+        // menu.push(...config.sidebarMenu);
 
         return (
             <Menu menu={menu}/>

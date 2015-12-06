@@ -10,17 +10,43 @@ import React, { Component, PropTypes } from 'react';
 import { initStores } from './app/stores';
 import { initServices } from './app/services';
 
-import config from './config';
 import App from './app';
 
-import _AppWrap from './_lib/components/AppWrap';
-import _AppSidebar from './_lib/components/AppSidebar';
-import _AppMain from './_lib/components/AppMain';
+export { default as AppWrap } from './_lib/components/AppWrap';
+export { default as AppSidebar } from './_lib/components/AppSidebar';
+export { default as AppMain } from './_lib/components/AppMain';
 
 /**
  *  Firepack
  */
 class Firepack extends Component {
+
+    constructor (props) {
+        super(props);
+
+        const { firebaseUrl } = props;
+
+        initStores({firebaseUrl});
+        initServices({firebaseUrl});
+
+        // this.childContext = {
+        //     appBasePath: props.appBasePath
+        // };
+    }
+
+    // static contextTypes = {
+    //     color: React.PropTypes.string
+    // };
+
+    static childContextTypes = {
+        appBasePath: React.PropTypes.string
+    };
+
+    getChildContext () {
+        return {
+            appBasePath: this.props.appBasePath
+        };
+    }
 
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
@@ -28,34 +54,21 @@ class Firepack extends Component {
         sidebarMenu: PropTypes.array.isRequired
     };
 
-    static defaultProps = {
-        appBasePath: '',
-        firebaseUrl: undefined,
-        sidebarMenu: []
-    };
+    // static defaultProps = {
+    //     appBasePath: '',
+    //     firebaseUrl: undefined,
+    //     sidebarMenu: []
+    // };
 
     render() {
-        const { appBasePath, firebaseUrl, sidebarMenu } = this.props;
-
-        config.appBasePath = appBasePath;
-        config.firebaseUrl = firebaseUrl;
-        config.sidebarMenu = sidebarMenu;
-
-        initStores({firebaseUrl});
-        initServices({firebaseUrl});
-
         return (
-            <App appBasePath={appBasePath}>
+            <App>
                 {this.props.children}
             </App>
         );
     }
 
 }
-
-export const AppWrap = _AppWrap;
-export const AppSidebar = _AppSidebar;
-export const AppMain = _AppMain;
 
 // Export Firepack
 export default Firepack;
