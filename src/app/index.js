@@ -1,7 +1,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Main
+    App - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -22,9 +22,9 @@ import Stores from './stores';
 const Style = require('../_lib/styles/main.scss');
 
 /**
- *  Main
+ *  App
  */
-class Main extends Component {
+class App extends Component {
 
     constructor (props) {
         super(props);
@@ -105,5 +105,5 @@ class Main extends Component {
 
 }
 
-// Export Main
-export default Main;
+// Export App
+export default App;

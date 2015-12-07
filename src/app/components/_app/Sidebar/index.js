@@ -37,8 +37,6 @@ class Sidebar extends Component {
     };
 
     componentDidMount () {
-        console.log(this.context);
-
         Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
     }
 
