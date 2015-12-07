@@ -28,41 +28,11 @@ class Firepack extends Component {
 
         initStores({firebaseUrl});
         initServices({firebaseUrl});
-
-        // this.childContext = {
-        //     appBasePath: props.appBasePath
-        // };
     }
-
-    // static contextTypes = {
-    //     color: React.PropTypes.string
-    // };
-
-    static childContextTypes = {
-        appBasePath: React.PropTypes.string
-    };
-
-    getChildContext () {
-        return {
-            appBasePath: this.props.appBasePath
-        };
-    }
-
-    static propTypes = {
-        appBasePath: PropTypes.string.isRequired,
-        firebaseUrl: PropTypes.string.isRequired,
-        sidebarMenu: PropTypes.array.isRequired
-    };
-
-    // static defaultProps = {
-    //     appBasePath: '',
-    //     firebaseUrl: undefined,
-    //     sidebarMenu: []
-    // };
 
     render() {
         return (
-            <App>
+            <App {...this.props}>
                 {this.props.children}
             </App>
         );

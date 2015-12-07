@@ -5,26 +5,26 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import AppWrap from '../../../../_lib/components/AppWrap';
 import AppSidebar from '../../../../_lib/components/AppSidebar';
 import AppMain from '../../../../_lib/components/AppMain';
 import Menu from '../../../../_lib/components/Menu';
-// import config from '../../../../config';
 
 /**
  *  Root
  */
 class Root extends Component {
 
-    render () {
-        // const { sidebarMenu } = config;
+    static contextTypes = {
+        sidebarMenu: PropTypes.array.isRequired
+    };
 
-        // menu={sidebarMenu}
+    render () {
         return (
             <AppWrap>
-                <AppSidebar/>
+                <AppSidebar menu={this.context.sidebarMenu}/>
                 <AppMain>
                     <div>Hello :)</div>
                 </AppMain>

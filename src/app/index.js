@@ -32,20 +32,30 @@ class Main extends Component {
         this.UserStore = Stores.UserStore;
     }
 
-    // static propTypes = {
-    //     appBasePath: PropTypes.string.isRequired,
-    // };
-
-    // static defaultProps = {
-    //     appBasePath: '',
-    // };
-
-    static contextTypes = {
-        appBasePath: PropTypes.string.isRequired
+    static propTypes = {
+        appBasePath: PropTypes.string.isRequired,
+        sidebarMenu: PropTypes.array.isRequired
     };
 
+    static defaultProps = {
+        appBasePath: '',
+        sidebarMenu: []
+    };
+
+    static childContextTypes = {
+        appBasePath: PropTypes.string.isRequired,
+        sidebarMenu: PropTypes.array.isRequired
+    };
+
+    getChildContext () {
+        return {
+            appBasePath: this.props.appBasePath,
+            sidebarMenu: this.props.sidebarMenu
+        };
+    }
+
     _userShouldBeGuest (nextState, replaceState) {
-        let { appBasePath } = this.context;
+        let { appBasePath } = this.props;
 
         if (appBasePath === '/') {
             appBasePath = '';
@@ -57,7 +67,7 @@ class Main extends Component {
     }
 
     _userShouldBeAuthenticated (nextState, replaceState) {
-        let { appBasePath } = this.context;
+        let { appBasePath } = this.props;
 
         if (appBasePath === '/') {
             appBasePath = '';
@@ -69,7 +79,7 @@ class Main extends Component {
     }
 
     render() {
-        let { appBasePath } = this.context;
+        let { appBasePath } = this.props;
 
         if (appBasePath === '') {
             appBasePath = '/';

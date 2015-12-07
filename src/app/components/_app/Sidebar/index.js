@@ -6,14 +6,13 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Logo from './Logo';
 import Menu from './Menu';
 import Profile from './Profile';
 
 import Stores from '../../../stores';
-// import config from '../../../../config';
 
 const Style = require('./style.scss');
 
@@ -32,7 +31,14 @@ class Sidebar extends Component {
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
 
+    static contextTypes = {
+        appBasePath: PropTypes.string.isRequired,
+        sidebarMenu: PropTypes.array.isRequired
+    };
+
     componentDidMount () {
+        console.log(this.context);
+
         Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
     }
 
@@ -68,7 +74,7 @@ class Sidebar extends Component {
             }
         ];
 
-        // menu.push(...config.sidebarMenu);
+        menu.push(...this.context.sidebarMenu);
 
         return (
             <Menu menu={menu}/>
