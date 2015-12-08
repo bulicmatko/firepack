@@ -12,6 +12,8 @@ import ReactDOM from 'react-dom';
 import Stores from '../../../stores';
 import { Link } from 'react-router';
 
+const Style = require('./style.scss');
+
 /**
  *  Reset Password
  */

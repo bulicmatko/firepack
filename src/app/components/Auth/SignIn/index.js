@@ -12,6 +12,8 @@ import Input from '../../../../_lib/components/Form/Input';
 import UserActions from '../../../actions/UserActions';
 import Stores from '../../../stores';
 
+const Style = require('./style.scss');
+
 /**
  *  Sign In
  */

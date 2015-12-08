@@ -1,7 +1,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Router
+    Auth - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -10,9 +10,9 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Layout from './Layout';
-import SignInComponent from './SignIn';
-import SignUpComponent from './SignUp';
-import ResetPasswordComponent from './ResetPassword';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import ResetPassword from './ResetPassword';
 
 /**
  *  Route Constructor
@@ -20,11 +20,11 @@ import ResetPasswordComponent from './ResetPassword';
 export default ({basePath = 'auth', onEnter = _.noop}) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
-            <IndexRoute onEnter={onEnter} component={SignInComponent}/>
+            <IndexRoute onEnter={onEnter} component={SignIn}/>
 
-            <Route path="sign-up" onEnter={onEnter} component={SignUpComponent}/>
-            <Route path="sign-in" onEnter={onEnter} component={SignInComponent}/>
-            <Route path="reset-password" onEnter={onEnter} component={ResetPasswordComponent}/>
+            <Route path="sign-up" onEnter={onEnter} component={SignUp}/>
+            <Route path="sign-in" onEnter={onEnter} component={SignIn}/>
+            <Route path="reset-password" onEnter={onEnter} component={ResetPassword}/>
         </Route>
     );
 };
