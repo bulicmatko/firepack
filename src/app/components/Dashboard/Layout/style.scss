@@ -1,0 +1,21 @@
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Layout
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../../../../../../node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import '../../../../_lib/styles/_core/all';
+
+
+//  Style
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.content {
+  text-align: center;
+  margin-left: rem(-200);
+  padding: rem(50) rem(30) rem(80);
+}

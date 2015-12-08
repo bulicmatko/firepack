@@ -26,12 +26,6 @@ const Style = require('../_lib/styles/main.scss');
  */
 class App extends Component {
 
-    constructor (props) {
-        super(props);
-
-        this.UserStore = Stores.UserStore;
-    }
-
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
         sidebarMenu: PropTypes.array.isRequired
@@ -61,7 +55,7 @@ class App extends Component {
             appBasePath = '';
         }
 
-        if (!this.UserStore.isUserGuest()) {
+        if (!Stores.UserStore.isUserGuest()) {
             replaceState({}, `${appBasePath}/dashboard`);
         }
     }
@@ -73,7 +67,7 @@ class App extends Component {
             appBasePath = '';
         }
 
-        if (!this.UserStore.isUserAuthenticated()) {
+        if (!Stores.UserStore.isUserAuthenticated()) {
             replaceState({nextPathname: nextState.location.pathname}, `${appBasePath}/auth`);
         }
     }
