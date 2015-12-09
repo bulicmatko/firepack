@@ -11,6 +11,7 @@ import React, { Component } from 'react';
  *  Layout
  */
 class Layout extends Component {
+    static displayName = 'Layout';
 
     render () {
         return (
@@ -25,7 +26,6 @@ class Layout extends Component {
             </div>
         );
     }
-
 }
 
 // Export Layout

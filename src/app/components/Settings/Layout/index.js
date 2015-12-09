@@ -13,6 +13,7 @@ import Menu from '../../../../_lib/components/Menu';
  *  Layout
  */
 class Layout extends Component {
+    static displayName = 'Layout';
 
     render () {
         return (
@@ -67,7 +68,6 @@ class Layout extends Component {
             </div>
         );
     }
-
 }
 
 // Export Layout

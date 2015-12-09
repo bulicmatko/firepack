@@ -16,6 +16,7 @@ import Menu from '../../../../_lib/components/Menu';
  *  Root
  */
 class Root extends Component {
+    static displayName = 'Root';
 
     static contextTypes = {
         sidebarMenu: PropTypes.array.isRequired
@@ -31,7 +32,6 @@ class Root extends Component {
             </AppWrap>
         );
     }
-
 }
 
 // Export Root

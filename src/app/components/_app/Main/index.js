@@ -15,6 +15,7 @@ const Style = require('./style.scss');
  *  Main
  */
 class Main extends Component {
+    static displayName = 'Main';
 
     constructor (props) {
         super(props);
@@ -88,7 +89,6 @@ class Main extends Component {
             </div>
         );
     }
-
 }
 
 // Export Main

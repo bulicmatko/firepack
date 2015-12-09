@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Logo
  */
 class Logo extends Component {
+    static displayName = 'Logo';
 
     static propTypes = {
         title: PropTypes.string.isRequired
@@ -35,7 +36,6 @@ class Logo extends Component {
             </Link>
         );
     }
-
 }
 
 // Export Logo

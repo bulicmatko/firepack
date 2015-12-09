@@ -17,6 +17,7 @@ const Style = require('./style.scss');
  *  Profile
  */
 class Profile extends Component {
+    static displayName = 'Profile';
 
     static propTypes = {
         displayName: PropTypes.string.isRequired,
@@ -42,7 +43,6 @@ class Profile extends Component {
             </div>
         );
     }
-
 }
 
 // Export Profile

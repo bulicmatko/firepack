@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Options Box
  */
 class OptionsBox extends Component {
+    static displayName = 'OptionsBox';
 
     shouldComponentUpdate (nextProps) {
         return this.props !== nextProps;
@@ -29,7 +30,6 @@ class OptionsBox extends Component {
             </ul>
         );
     }
-
 }
 
 // Export Options Box

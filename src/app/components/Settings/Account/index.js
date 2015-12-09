@@ -13,6 +13,7 @@ import Input from '../../../../_lib/components/Form/Input';
  *  Account
  */
 class Account extends Component {
+    static displayName = 'Account';
 
     render () {
         return (
@@ -53,7 +54,6 @@ class Account extends Component {
             </div>
         );
     }
-
 }
 
 // Export Account

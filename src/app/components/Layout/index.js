@@ -16,6 +16,7 @@ import Stores from '../../stores';
  *  Layout
  */
 class Layout extends Component {
+    static displayName = 'Layout';
 
     constructor (props) {
         super(props);
@@ -64,7 +65,6 @@ class Layout extends Component {
             </div>
         );
     }
-
 }
 
 // Export Layout

@@ -11,6 +11,7 @@ import React, { Component } from 'react';
  *  Profile
  */
 class Profile extends Component {
+    static displayName = 'Profile';
 
     render () {
         return (
@@ -28,7 +29,6 @@ class Profile extends Component {
             </div>
         );
     }
-
 }
 
 // Export Profile

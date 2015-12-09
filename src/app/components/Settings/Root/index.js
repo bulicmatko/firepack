@@ -13,6 +13,7 @@ const Style = require('./style.scss');
  *  Root
  */
 class Root extends Component {
+    static displayName = 'Root';
 
     render () {
         return (
@@ -26,7 +27,6 @@ class Root extends Component {
             </div>
         );
     }
-
 }
 
 // Export Root

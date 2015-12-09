@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Profile Box
  */
 class ProfileBox extends Component {
+    static displayName = 'ProfileBox';
 
     static propTypes = {
         displayName: PropTypes.string.isRequired,
@@ -45,7 +46,6 @@ class ProfileBox extends Component {
             </div>
         );
     }
-
 }
 
 // Export Profile Box

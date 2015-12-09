@@ -17,6 +17,7 @@ import Stores from '../../../stores';
  *  Notifications Component
  */
 class NotificationsComponent extends Component {
+    static displayName = 'Notifications';
 
     constructor (props) {
         super(props);

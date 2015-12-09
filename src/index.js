@@ -20,6 +20,7 @@ export { default as AppMain } from './_lib/components/AppMain';
  *  Firepack
  */
 class Firepack extends Component {
+    static displayName = 'Firepack';
 
     constructor (props) {
         super(props);
@@ -37,7 +38,6 @@ class Firepack extends Component {
             </App>
         );
     }
-
 }
 
 // Export Firepack

@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Menu
  */
 class Menu extends Component {
+    static displayName = 'Menu';
 
     static propTypes = {
         menu: PropTypes.array.isRequired
@@ -44,7 +45,6 @@ class Menu extends Component {
             </div>
         );
     }
-
 }
 
 // Export Menu

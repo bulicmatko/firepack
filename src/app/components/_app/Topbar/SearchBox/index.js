@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Search Box
  */
 class SearchBox extends Component {
+    static displayName = 'SearchBox';
 
     static propTypes = {
         placeholder: PropTypes.string,
@@ -45,7 +46,6 @@ class SearchBox extends Component {
             </form>
         );
     }
-
 }
 
 // Export Search Box

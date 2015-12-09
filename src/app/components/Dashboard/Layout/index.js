@@ -16,6 +16,7 @@ const Style = require('./style.scss');
  *  Layout
  */
 class Layout extends Component {
+    static displayName = 'Layout';
 
     render () {
         return (
@@ -29,7 +30,6 @@ class Layout extends Component {
             </AppWrap>
         );
     }
-
 }
 
 // Export Layout

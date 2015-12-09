@@ -25,6 +25,7 @@ const Style = require('../_lib/styles/main.scss');
  *  App
  */
 class App extends Component {
+    static displayName = 'App';
 
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
@@ -96,7 +97,6 @@ class App extends Component {
             </Router>
         );
     }
-
 }
 
 // Export App

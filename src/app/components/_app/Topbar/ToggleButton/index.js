@@ -14,6 +14,7 @@ const Style = require('./style.scss');
  *  Toggle Button
  */
 class ToggleButton extends Component {
+    static displayName = 'ToggleButton';
 
     static propTypes = {
         onClick: PropTypes.func
@@ -40,7 +41,6 @@ class ToggleButton extends Component {
             </button>
         );
     }
-
 }
 
 // Export Toggle Button

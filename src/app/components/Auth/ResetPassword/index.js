@@ -18,6 +18,7 @@ const Style = require('./style.scss');
  *  Reset Password
  */
 class ResetPassword extends Component {
+    static displayName = 'ResetPassword';
 
     constructor (props) {
         super(props);

@@ -18,6 +18,7 @@ const Style = require('./style.scss');
  *  Sign In
  */
 class SignIn extends Component {
+    static displayName = 'SignIn';
 
     constructor (props) {
         super(props);
@@ -143,7 +144,6 @@ class SignIn extends Component {
             </div>
         );
     }
-
 }
 
 // Export Sign In
