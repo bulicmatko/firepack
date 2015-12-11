@@ -5,7 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 
@@ -13,7 +13,7 @@ import Input from '../../../../_lib/components/Form/Input';
 import AccountActions from '../../../actions/AccountActions';
 import Stores from '../../../stores';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Sign Up
@@ -36,14 +36,14 @@ class SignUp extends Component {
         this.__handleSignUpStoreDataChange = this._handleSignUpStoreDataChange.bind(this);
     }
 
-    shouldComponentUpdate (nextProps, nextState) {
-        return this.props !== nextProps || this.state !== nextState;
-    }
-
     componentDidMount () {
         this._focusInputField('email');
 
         Stores.SignUpStore.addDataChangeListener(this.__handleSignUpStoreDataChange);
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        return this.props !== nextProps || this.state !== nextState;
     }
 
     componentWillUnmount () {
@@ -59,11 +59,13 @@ class SignUp extends Component {
     }
 
     _focusInputField (field) {
-        this.refs[field] && ReactDOM.findDOMNode(this.refs[field]).querySelector('input').focus();
+        if (this.refs[field]) {
+            ReactDOM.findDOMNode(this.refs[field]).querySelector('input').focus();
+        }
     }
 
     _handleInputChange (name, value) {
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
 
     _handleSubmit (event) {

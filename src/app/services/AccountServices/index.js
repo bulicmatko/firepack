@@ -25,7 +25,7 @@ class AccountServices extends BaseService {
             event: AccountEvents.ACCOUNT_CREATION_STARTED
         });
 
-        this._DB.createUser({email, password}, (error, userData) => {
+        this._DB.createUser({ email, password }, (error, userData) => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_EMAIL:
@@ -88,6 +88,7 @@ class AccountServices extends BaseService {
                     event: AccountEvents.ACCOUNT_CREATED,
                     data: {
                         field: null,
+                        data: userData,
                         message: 'Your account has been successfully created.'
                     }
                 });
@@ -96,11 +97,11 @@ class AccountServices extends BaseService {
     }
 
     changeAccountEmail (oldEmail, newEmail, password) {
-        console.log('Change account email:', oldEmail, newEmail, password);
+        console.log('Change account email:', oldEmail, newEmail, password); // eslint-disable-line
     }
 
     changeAccountPassword (email, oldPassword, newPassword) {
-        console.log('Change account password:', email, password);
+        console.log('Change account password:', email, password, newPassword); // eslint-disable-line
     }
 
     resetAccountPassword (email) {
@@ -108,7 +109,7 @@ class AccountServices extends BaseService {
             event: AccountEvents.ACCOUNT_PASSWORD_RESET_STARTED
         });
 
-        this._DB.resetPassword({email}, (error) => {
+        this._DB.resetPassword({ email }, error => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_USER:
@@ -170,7 +171,7 @@ class AccountServices extends BaseService {
     }
 
     deleteAccount (email, password) {
-        console.log('Delete account:', email, password);
+        console.log('Delete account:', email, password); // eslint-disable-line
     }
 
 }

@@ -5,7 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import TopbarComponent from '../_app/Topbar';
 import SidebarComponent from '../_app/Sidebar';
@@ -17,6 +17,10 @@ import Stores from '../../stores';
  */
 class Layout extends Component {
     static displayName = 'Layout';
+
+    static propTypes = {
+        children: PropTypes.element
+    };
 
     constructor (props) {
         super(props);

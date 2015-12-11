@@ -14,6 +14,6 @@ import Layout from './Layout';
 /**
  *  Route Constructor
  */
-export default({basePath = 'dashboard', onEnter = _.noop}) => {
+export default({ basePath = 'dashboard', onEnter = _.noop }) => {
     return <Route path={basePath} onEnter={onEnter} component={Layout}/>;
 };

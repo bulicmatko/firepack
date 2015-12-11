@@ -7,12 +7,12 @@
 
 import AccountActions from '../../../actions/AccountActions';
 import Input from '../../../../_lib/components/Form/Input';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Stores from '../../../stores';
 import { Link } from 'react-router';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Reset Password
@@ -31,15 +31,15 @@ class ResetPassword extends Component {
 
         this.__handleResetPasswordStoreDataChange = this._handleResetPasswordStoreDataChange.bind(this);
     }
+    componentDidMount () {
+        this._focusInputField('email');
+        Stores.ResetPasswordStore.addDataChangeListener(this.__handleResetPasswordStoreDataChange);
+    }
 
     shouldComponentUpdate (nextProps, nextState) {
         return this.props !== nextProps || this.state !== nextState;
     }
 
-    componentDidMount () {
-        this._focusInputField('email');
-        Stores.ResetPasswordStore.addDataChangeListener(this.__handleResetPasswordStoreDataChange);
-    }
 
     componentWillUnmount () {
         Stores.ResetPasswordStore.removeDataChangeListener(this.__handleResetPasswordStoreDataChange);
@@ -54,11 +54,13 @@ class ResetPassword extends Component {
     }
 
     _focusInputField (field) {
-        this.refs[field] && ReactDOM.findDOMNode(this.refs[field]).querySelector('input').focus();
+        if (this.refs[field]) {
+            ReactDOM.findDOMNode(this.refs[field]).querySelector('input').focus();
+        }
     }
 
     _handleInputChange (name, value) {
-        this.setState({[name]: value});
+        this.setState({ [name]: value });
     }
 
     _handleSubmit (event) {

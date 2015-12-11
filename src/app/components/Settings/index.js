@@ -17,7 +17,7 @@ import Profile from './Profile';
 /**
  *  Route Constructor
  */
-export default ({basePath = 'settings', onEnter = _.noop}) => {
+export default ({ basePath = 'settings', onEnter = _.noop }) => {
     return (
         <Route path={basePath} component={Layout}>
             <IndexRoute onEnter={onEnter} component={Root}/>
