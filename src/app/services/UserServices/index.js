@@ -25,7 +25,7 @@ class UserServices extends BaseService {
             event: UserEvents.USER_AUTHENTIFICATION_STARTED
         });
 
-        this._DB.authWithPassword({email, password}, (error, authData) => {
+        this._DB.authWithPassword({ email, password }, (error, authData) => {
             if (error) {
                 switch (error.code) {
                     case FirebaseCodes.INVALID_EMAIL:

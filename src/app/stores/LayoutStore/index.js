@@ -43,8 +43,8 @@ class LayoutStore extends BaseStore {
         this._data.error = {};
     }
 
-    _setError ({field, message}) {
-        this._data.error = {field, message};
+    _setError ({ field, message }) {
+        this._data.error = { field, message };
     }
 
     _setLoadingState (state) {
@@ -67,6 +67,9 @@ class LayoutStore extends BaseStore {
                 this._resetError();
                 this._setLoadingState(false);
                 this._emitChange();
+                break;
+            default:
+                // Do nothing
                 break;
         }
     }
