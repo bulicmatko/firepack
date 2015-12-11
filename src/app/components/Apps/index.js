@@ -15,7 +15,7 @@ import Root from './Root';
 /**
  *  Route Constructor
  */
-export default ({basePath = 'apps', onEnter = _.noop, children = null}) => {
+export default ({ basePath = 'apps', onEnter = _.noop, children = null }) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
             <IndexRoute onEnter={onEnter} component={Root}/>

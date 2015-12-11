@@ -5,13 +5,10 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-
-// Imports
 import md5 from 'md5';
 import React, { Component, PropTypes } from 'react';
 
-// Style
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Profile

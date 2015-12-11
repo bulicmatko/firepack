@@ -17,7 +17,7 @@ import ResetPassword from './ResetPassword';
 /**
  *  Route Constructor
  */
-export default ({basePath = 'auth', onEnter = _.noop}) => {
+export default ({ basePath = 'auth', onEnter = _.noop }) => {
     return (
         <Route path={basePath} onEnter={onEnter} component={Layout}>
             <IndexRoute onEnter={onEnter} component={SignIn}/>

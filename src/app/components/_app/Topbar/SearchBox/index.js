@@ -8,7 +8,7 @@
 import _ from 'lodash';
 import React, { Component, PropTypes } from 'react';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Search Box

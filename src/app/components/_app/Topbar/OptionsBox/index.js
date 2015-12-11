@@ -5,10 +5,9 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import _ from 'lodash';
-import React, { Component, PropTypes } from 'react';
+import React, { Component, } from 'react';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Options Box

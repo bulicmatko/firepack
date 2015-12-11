@@ -22,16 +22,20 @@ export { default as AppMain } from './_lib/components/AppMain';
 class Firepack extends Component {
     static displayName = 'Firepack';
 
+    static propTypes = {
+        children: PropTypes.element
+    };
+
     constructor (props) {
         super(props);
 
         const { firebaseUrl } = props;
 
-        initStores({firebaseUrl});
-        initServices({firebaseUrl});
+        initStores({ firebaseUrl });
+        initServices({ firebaseUrl });
     }
 
-    render() {
+    render () {
         return (
             <App {...this.props}>
                 {this.props.children}

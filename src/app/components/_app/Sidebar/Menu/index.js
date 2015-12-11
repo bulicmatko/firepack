@@ -8,7 +8,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Menu

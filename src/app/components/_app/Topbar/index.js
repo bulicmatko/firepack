@@ -14,7 +14,7 @@ import OptionsBox from './OptionsBox';
 import ProfileBox from './ProfileBox';
 import Stores from '../../../stores';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Topbar
@@ -26,7 +26,7 @@ class Topbar extends Component {
 
         this.state = {
             user: Stores.UserStore.getUser()
-        }
+        };
 
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
@@ -48,7 +48,7 @@ class Topbar extends Component {
     _renderToggleButton () {
         return (
             <div className="Topbar--ToggleButton">
-                <ToggleButton onClick={() => console.log('Toggle Layout!')}/>
+                <ToggleButton/>
             </div>
         );
     }
@@ -56,7 +56,7 @@ class Topbar extends Component {
     _renderSearchBox () {
         return (
             <div className="Topbar--SearchBox">
-                <SearchBox onSubmit={val => console.log(val)}/>
+                <SearchBox/>
             </div>
         );
     }

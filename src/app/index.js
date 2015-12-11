@@ -19,7 +19,7 @@ import Error404 from './components/Error404';
 
 import Stores from './stores';
 
-const Style = require('../_lib/styles/main.scss');
+const Style = require('../_lib/styles/main.scss'); // eslint-disable-line
 
 /**
  *  App
@@ -29,17 +29,18 @@ class App extends Component {
 
     static propTypes = {
         appBasePath: PropTypes.string.isRequired,
+        sidebarMenu: PropTypes.array.isRequired,
+        children: PropTypes.element
+    };
+
+    static childContextTypes = {
+        appBasePath: PropTypes.string.isRequired,
         sidebarMenu: PropTypes.array.isRequired
     };
 
     static defaultProps = {
         appBasePath: '',
         sidebarMenu: []
-    };
-
-    static childContextTypes = {
-        appBasePath: PropTypes.string.isRequired,
-        sidebarMenu: PropTypes.array.isRequired
     };
 
     getChildContext () {
@@ -69,11 +70,11 @@ class App extends Component {
         }
 
         if (!Stores.UserStore.isUserAuthenticated()) {
-            replaceState({nextPathname: nextState.location.pathname}, `${appBasePath}/auth`);
+            replaceState({ nextPathname: nextState.location.pathname }, `${appBasePath}/auth`);
         }
     }
 
-    render() {
+    render () {
         let { appBasePath } = this.props;
 
         if (appBasePath === '') {
@@ -81,18 +82,18 @@ class App extends Component {
         }
 
         return (
-            <Router history={createHistory({queryKey: false})}>
+            <Router history={createHistory({ queryKey: false })}>
                 <Redirect from={appBasePath} to={`${appBasePath}/auth`}/>
 
                 <Route path={appBasePath} component={Layout}>
-                    {Auth({basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this)})}
+                    {Auth({ basePath: 'auth', onEnter: this._userShouldBeGuest.bind(this) })}
 
-                    {Dashboard({basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this)})}
-                    {Settings({basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {Dashboard({ basePath: 'dashboard', onEnter: this._userShouldBeAuthenticated.bind(this) })}
+                    {Settings({ basePath: 'settings', onEnter: this._userShouldBeAuthenticated.bind(this) })}
 
-                    {Apps({basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children})}
+                    {Apps({ basePath: 'apps', onEnter: this._userShouldBeAuthenticated.bind(this), children: this.props.children })}
 
-                    {Error404({basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this)})}
+                    {Error404({ basePath: '*', onEnter: this._userShouldBeAuthenticated.bind(this) })}
                 </Route>
             </Router>
         );

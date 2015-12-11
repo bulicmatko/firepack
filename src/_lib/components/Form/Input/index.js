@@ -16,7 +16,13 @@ import { VelocityTransitionGroup } from 'velocity-react';
 class Input extends Component {
 
     static propTypes = {
-        id: PropTypes.string
+        id: PropTypes.string,
+        label: PropTypes.string,
+        helperText: PropTypes.string,
+        required: PropTypes.bool,
+        disabled: PropTypes.bool,
+        value: PropTypes.string,
+        invalid: PropTypes.bool,
     };
 
     static defaultProps = {

@@ -8,7 +8,7 @@
 import _ from 'lodash';
 import React, { Component, PropTypes } from 'react';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Toggle Button
@@ -31,7 +31,7 @@ class ToggleButton extends Component {
     _handleClick (e) {
         e.preventDefault();
 
-        this.props.onClick()
+        this.props.onClick();
     }
 
     render () {

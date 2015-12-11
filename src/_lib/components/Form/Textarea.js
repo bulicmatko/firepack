@@ -14,17 +14,17 @@ import React, { Component, PropTypes } from 'react';
  */
 class Textarea extends Component {
 
-    static propTypes () {
-        return {
-            id: PropTypes.string
-        };
-    }
+    static propTypes = {
+        id: PropTypes.string,
+        label: PropTypes.string,
+        helperText: PropTypes.string,
+        required: PropTypes.bool,
+        value: PropTypes.string
+    };
 
-    static defaultProps () {
-        return {
-            id: _.uniqueId('textarea')
-        };
-    }
+    static defaultProps = {
+        id: _.uniqueId('textarea')
+    };
 
     shouldComponentUpdate (nextProps) {
         return this.props !== nextProps;

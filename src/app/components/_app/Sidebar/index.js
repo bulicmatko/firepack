@@ -14,27 +14,27 @@ import Profile from './Profile';
 
 import Stores from '../../../stores';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Sidebar
  */
 class Sidebar extends Component {
 
+    static contextTypes = {
+        appBasePath: PropTypes.string.isRequired,
+        sidebarMenu: PropTypes.array.isRequired
+    };
+
     constructor (props) {
         super(props);
 
         this.state = {
             user: Stores.UserStore.getUser()
-        }
+        };
 
         this.__handleUserStoreDataChange = this._handleUserStoreDataChange.bind(this);
     }
-
-    static contextTypes = {
-        appBasePath: PropTypes.string.isRequired,
-        sidebarMenu: PropTypes.array.isRequired
-    };
 
     componentDidMount () {
         Stores.UserStore.addDataChangeListener(this.__handleUserStoreDataChange);
@@ -55,7 +55,7 @@ class Sidebar extends Component {
     }
 
     _renderMenu () {
-        let menu = [
+        const menu = [
             {
                 title: 'Menu',
                 links: [

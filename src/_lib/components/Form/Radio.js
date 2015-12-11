@@ -6,25 +6,25 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import _ from 'lodash';
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import ClassNames from 'classnames';
 
 /**
  *  Input Component
  */
-class InputComponent extends React.Component {
+class InputComponent extends Component {
 
-    static get propTypes () {
-        return {
-            id: React.PropTypes.string.isRequired
-        };
-    }
+    static propTypes = {
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string,
+        helperText: PropTypes.string,
+        required: PropTypes.bool,
+        value: PropTypes.string
+    };
 
-    static defaultProps () {
-        return {
-            id: _.uniqueId('input')
-        };
-    }
+    static defaultProps = {
+        id: _.uniqueId('input')
+    };
 
     shouldComponentUpdate (nextProps) {
         return this.props !== nextProps;

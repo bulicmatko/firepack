@@ -5,14 +5,18 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  App Main
  */
 class AppMain extends Component {
+
+    static propTypes = {
+        children: PropTypes.element
+    };
 
     render () {
         return (
