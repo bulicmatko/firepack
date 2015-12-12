@@ -5,13 +5,17 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 /**
  *  Layout
  */
 class Layout extends Component {
     static displayName = 'Layout';
+
+    static propTypes = {
+        children: PropTypes.element
+    };
 
     render () {
         return this.props.children;

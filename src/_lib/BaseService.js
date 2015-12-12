@@ -6,7 +6,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import Firebase from 'firebase';
-import Dispatcher from './Dispatcher';
 
 /**
  *  Base Services

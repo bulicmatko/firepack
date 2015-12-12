@@ -7,7 +7,7 @@
 
 import React, { Component } from 'react';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Root

@@ -5,7 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Menu from '../../../../_lib/components/Menu';
 
@@ -14,6 +14,10 @@ import Menu from '../../../../_lib/components/Menu';
  */
 class Layout extends Component {
     static displayName = 'Layout';
+
+    static propTypes = {
+        children: PropTypes.element
+    };
 
     render () {
         return (

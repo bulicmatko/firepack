@@ -29,12 +29,12 @@ class NotificationsComponent extends Component {
         this.__handleNotificationsStoreDataChange = this._handleNotificationsStoreDataChange.bind(this);
     }
 
-    shouldComponentUpdate (nextProps, nextState) {
-        return this.props !== nextProps || this.state !== nextState;
-    }
-
     componentDidMount () {
         Stores.NotificationsStore.addDataChangeListener(this.__handleNotificationsStoreDataChange);
+    }
+
+    shouldComponentUpdate (nextProps, nextState) {
+        return this.props !== nextProps || this.state !== nextState;
     }
 
     componentWillUnmount () {

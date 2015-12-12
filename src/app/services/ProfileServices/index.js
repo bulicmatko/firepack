@@ -8,7 +8,6 @@
 import BaseService from '../../../_lib/BaseService';
 import Dispatcher from '../../../_lib/Dispatcher';
 import ProfileEvents from '../../events/ProfileEvents';
-import FirebaseCodes from '../../constants/FirebaseCodes';
 import NotificationTypes from '../../constants/NotificationTypes';
 
 /**
@@ -25,7 +24,7 @@ class ProfileServices extends BaseService {
             event: ProfileEvents.PROFILE_UPDATE_STARTED
         });
 
-        console.log('Profile Updated with:', patch);
+        console.log('Profile Updated with:', patch); // eslint-disable-line
 
         Dispatcher.dispatch({
             event: ProfileEvents.PROFILE_UPDATED,

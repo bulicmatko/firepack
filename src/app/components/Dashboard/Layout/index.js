@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import AppWrap from '../../../../_lib/components/AppWrap';
 import AppMain from '../../../../_lib/components/AppMain';
 
-const Style = require('./style.scss');
+const Style = require('./style.scss'); // eslint-disable-line
 
 /**
  *  Layout

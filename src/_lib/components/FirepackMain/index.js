@@ -5,12 +5,16 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 /**
  *  App Main
  */
 class AppMain extends Component {
+
+    static propTypes = {
+        children: PropTypes.element
+    };
 
     render () {
         return (

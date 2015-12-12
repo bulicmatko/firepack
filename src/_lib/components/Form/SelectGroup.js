@@ -6,16 +6,21 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import _ from 'lodash';
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import ClassNames from 'classnames';
 
 /**
  *  Select Group Component
  */
-class SelectGroupComponent extends React.Component {
+class SelectGroupComponent extends Component {
 
     static propTypes = {
-        id: React.propTypes.String.isRequired
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string,
+        helperText: PropTypes.string,
+        options: PropTypes.array,
+        required: PropTypes.bool,
+        value: PropTypes.string
     };
 
     static defaultProps = {
@@ -34,14 +39,14 @@ class SelectGroupComponent extends React.Component {
 
     _renderField () {
         return (
-            <select ..._.omit(this.props, ['label'])>
+            <select {..._.omit(this.props, ['label'])}>
                 {this.props.options.map(this._renderFieldOption.bind(this))}
             </select>
         );
     }
 
     _renderFieldOption () {
-        return ()
+        return null;
     }
 
     _renderHelperText () {
