@@ -23,11 +23,11 @@ class Menu extends Component {
     render () {
         return (
             <div className="Menu">
-                {this.props.menu.map((category, index) => {
+                {this.props.menu.map((category, key) => {
                     return (
-                        <div className="category" key={index}>
+                        <div className="category" key={key}>
                             <h6 className="title">{category.title}</h6>
-                            <ul className="items" key={index}>
+                            <ul className="items" key={key}>
                                 {category.links.map((link, index) => {
                                     return (
                                         <li className="item" key={index}>

@@ -5,7 +5,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react';
 
 /**
  *  Layout

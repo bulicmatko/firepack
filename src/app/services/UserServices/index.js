@@ -88,6 +88,7 @@ class UserServices extends BaseService {
                     event: UserEvents.USER_AUTHENTICATED,
                     data: {
                         field: null,
+                        data: authData,
                         message: 'Your are successfully signed in.'
                     }
                 });

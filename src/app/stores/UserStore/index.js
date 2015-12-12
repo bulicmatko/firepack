@@ -6,7 +6,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import BaseStore from '../../../_lib/BaseStore';
-import UserEvents from '../../events/UserEvents';
 
 /**
  *  User Store
