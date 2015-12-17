@@ -10,8 +10,8 @@
 
   // Rules
   "rules": {
-    "comma-dangle": 0,
-    "indent": [2, 4, {"SwitchCase": 1, "VariableDeclarator": 1}],
+    "comma-dangle": [2, "never"],
+    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
     "space-before-function-paren": [2, { "anonymous": "always", "named": "always" }],
     "new-cap": 0
   }
