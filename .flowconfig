@@ -1,0 +1,12 @@
+[include]
+./src/*.js
+
+[ignore]
+.*/node_modules/.*
+.*/test/.*
+
+[libs]
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable

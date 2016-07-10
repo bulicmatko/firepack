@@ -1,0 +1,43 @@
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Dashboard Page
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../../../styles/lib/main';
+
+
+//  Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.DashboardPage {
+  position: relative;
+}
+
+.DashboardPage--Content {
+  text-align: center;
+  padding: rem(60) 0;
+
+  > img {
+    width: rem(80); height: rem(80);
+
+    background-color: color('grey', '200');
+    border-radius: percentage(1/8);
+  }
+
+  > h1 {
+    color: color('grey', '800');
+  }
+
+  > p {
+    color: color('grey', '600');
+  }
+
+  > button {
+    margin-top: rem(20);
+  }
+}

@@ -1,0 +1,52 @@
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Workspace Container
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../../styles/lib/main';
+
+
+//  Variables
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+$sidebar-width: rem(220);
+
+
+//  Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.WorkspaceContainer {
+  position: relative;
+}
+
+.WorkspaceContainer--Sidebar {
+  position: fixed; overflow: hidden; z-index: 10;
+  top: 0; right: auto; bottom: 0; left: 0;
+
+  width: $sidebar-width;
+
+  background-color: color('blue-grey', '900');
+
+  > .title {
+    font-size: rem(25); line-height: rem(40);
+    color: color('blue-grey', '400');
+
+    margin: 0; padding: rem(12) rem(20) rem(8);
+    box-sizing: border-box;
+
+    border-bottom: rem(1) solid color('blue-grey', '800');
+
+    > span {
+      margin-left: rem(10);
+    }
+  }
+}
+
+.WorkspaceContainer--Content {
+  margin-left: $sidebar-width;
+}

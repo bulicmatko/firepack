@@ -1,0 +1,29 @@
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Root Container
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../styles/lib/main';
+
+
+//  Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.RootContainer {
+  position: relative;
+}
+
+.RootContainer--Content {
+  position: relative;
+
+  > .loading-screen {
+    color: color('grey', '600'); text-align: center;
+
+    padding: rem(80) 0;
+  }
+}

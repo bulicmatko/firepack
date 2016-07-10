@@ -1,48 +1,62 @@
+/* eslint-env browser */
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Firepack - Index
+  Firepack - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes } from 'react';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
-import { initStores } from './app/stores';
-import { initServices } from './app/services';
+import store from './store';
 
-import App from './app';
+import buildRoutes from './routes';
 
-export { default as AppWrap } from './_lib/components/AppWrap';
-export { default as AppSidebar } from './_lib/components/AppSidebar';
-export { default as AppMain } from './_lib/components/AppMain';
+import './styles/global';
 
 /**
  *  Firepack
  */
-class Firepack extends Component {
-    static displayName = 'Firepack';
+export default class extends Component {
+  static displayName = 'Firepack';
 
-    static propTypes = {
-        children: PropTypes.element
+  static propTypes = {
+    firebaseConfig: PropTypes.object.isRequired,
+    routes: PropTypes.array.isRequired,
+    menu: PropTypes.array.isRequired,
+  };
+
+  static defaultProps = {
+    firebaseConfig: {},
+    routes: [],
+    menu: [],
+  };
+
+  static childContextTypes = {
+    firebaseConfig: PropTypes.object,
+    menu: PropTypes.array,
+  };
+
+  getChildContext() {
+    const { firebaseConfig, menu } = this.props;
+
+    return {
+      firebaseConfig,
+      menu,
     };
+  }
 
-    constructor (props) {
-        super(props);
+  render() {
+    const { routes } = this.props;
+    const history = syncHistoryWithStore(browserHistory, store);
 
-        const { firebaseUrl } = props;
-
-        initStores({ firebaseUrl });
-        initServices({ firebaseUrl });
-    }
-
-    render () {
-        return (
-            <App {...this.props}>
-                {this.props.children}
-            </App>
-        );
-    }
+    return (
+      <Provider store={store}>
+        <Router history={history} routes={buildRoutes(routes)} />
+      </Provider>
+    );
+  }
 }
-
-// Export Firepack
-export default Firepack;

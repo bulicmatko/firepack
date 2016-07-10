@@ -1,0 +1,24 @@
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//  Auth Container
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+//  Imports
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@import '../../../styles/lib/main';
+
+
+//  Styles
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.AuthContainer {
+  position: relative;
+}
+
+.AuthContainer--Content {
+  margin: 0 auto;
+  max-width: rem(420);
+}
