@@ -13,10 +13,11 @@ import app from './app';
 import user from './user';
 
 /**
- *  Combine Reducers
+ *  Create Reducer
  */
-export default combineReducers({
+export default content => combineReducers({
   routing: routerReducer,
   app,
   user,
+  content,
 });

@@ -6,57 +6,12 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes } from 'react';
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+export { default } from './Firepack';
 
-import store from './store';
+export { default as actions } from './actions';
+export { default as selectors } from './selectors';
 
-import buildRoutes from './routes';
+export { default as createRoutes } from './routes';
 
-import './styles/global';
-
-/**
- *  Firepack
- */
-export default class extends Component {
-  static displayName = 'Firepack';
-
-  static propTypes = {
-    firebaseConfig: PropTypes.object.isRequired,
-    routes: PropTypes.array.isRequired,
-    menu: PropTypes.array.isRequired,
-  };
-
-  static defaultProps = {
-    firebaseConfig: {},
-    routes: [],
-    menu: [],
-  };
-
-  static childContextTypes = {
-    firebaseConfig: PropTypes.object,
-    menu: PropTypes.array,
-  };
-
-  getChildContext() {
-    const { firebaseConfig, menu } = this.props;
-
-    return {
-      firebaseConfig,
-      menu,
-    };
-  }
-
-  render() {
-    const { routes } = this.props;
-    const history = syncHistoryWithStore(browserHistory, store);
-
-    return (
-      <Provider store={store}>
-        <Router history={history} routes={buildRoutes(routes)} />
-      </Provider>
-    );
-  }
-}
+export { default as createReducer } from './utils/createReducer.util';
+export { default as createActionTypes } from './utils/createActionTypes.util';

@@ -45,7 +45,7 @@ export default class extends Component {
     const { router, app, user } = this.props;
 
     if (app.isReady && !user.isAuthenticating && user.isAuthenticated) {
-      router.replace({ pathname: route('dashboard') });
+      router.replace({ pathname: route('root') });
     }
   }
 

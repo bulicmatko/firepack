@@ -2,10 +2,10 @@
   "name": "firepack",
   "version": "0.0.0-semantically-released",
   "description": "Firebase application wrapper",
-  "main": "./dist/index.js",
+  "main": "./src/index.js",
   "files": [
-    "./dist",
-    "./README.md",
+    "./src",
+    "./README.md"
   ],
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize --progress --colors",
@@ -15,7 +15,7 @@
     "cover": "nyc npm run test --report-dir=./public/coverage --reporter=html --reporter=lcov && nyc report --report-dir=./public/coverage",
     "deploy": "npm run check && npm run build && firebase deploy",
     "flow": "flow",
-    "lint": "eslint ./firepack ./src",
+    "lint": "eslint ./src",
     "report-coverage": "nyc report --report-dir=./public/coverage --reporter=text-lcov > ./public/coverage/coverage.lcov && ./node_modules/.bin/codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "server": "firebase serve",
@@ -40,6 +40,20 @@
     "url": "https://github.com/bulicmatko/firepack/issues"
   },
   "dependencies": {
+    "firebase": "^3.1.0",
+    "immutable": "^3.8.1",
+    "lodash": "^4.13.1",
+    "react": "^15.2.0",
+    "react-css-modules": "^3.7.7",
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "reselect": "^2.5.3"
+  },
+  "peerDependencies": {
     "firebase": "^3.1.0",
     "immutable": "^3.8.1",
     "lodash": "^4.13.1",
@@ -94,7 +108,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run check"
+      "pre-commit": "npm run lint"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

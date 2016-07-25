@@ -10,6 +10,8 @@ import { fromJS } from 'immutable';
 
 import { APP, AUTH } from '../../constants/actionTypes.const';
 
+import createReducer from '../../utils/createReducer.util';
+
 /**
  *  Initial State
  */
@@ -22,7 +24,7 @@ const initState = fromJS({
 /**
  *  Hash Map
  */
-const hashMap = {
+export default createReducer({
   [APP.SETUP]: state => (
     state.set('isAuthenticating', true)
   ),
@@ -60,15 +62,4 @@ const hashMap = {
   [AUTH.SIGN_OUT_FAIL]: state => (
     state.set('isAuthenticating', false)
   ),
-};
-
-/**
- *  User - Reducer
- */
-export default (state = initState, action) => {
-  const { type, payload } = action;
-
-  return hashMap[type]
-    ? hashMap[type](state, payload)
-    : state;
-};
+}, initState);

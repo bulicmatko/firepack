@@ -9,4 +9,4 @@
 /**
  *  App Selectors
  */
-export default state => state.app.toJS();
+export const getApp = state => state.app.toJS();

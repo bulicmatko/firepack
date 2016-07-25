@@ -9,8 +9,8 @@
 /**
  *  Create Action Types
  */
-export default (prefix, actionTypes) => (
+export default (actionTypes, prefix) => (
   actionTypes.reduce((prev, curr, index, array) => (
-    { ...prev, [array[index]]: `@@firepack/${prefix}/${array[index]}` }
+    { ...prev, [array[index]]: prefix ? `${prefix}/${array[index]}` : array[index] }
   ), {})
 );

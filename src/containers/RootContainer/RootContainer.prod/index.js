@@ -2,27 +2,25 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Dashboard Page - Index
+  Root Container (Production) - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import pick from 'lodash/pick';
 
 import Component from './Component';
 
-import getUser from '../../../selectors/user';
-
-import signOut from '../../../actions/auth/signOut.action';
+import { getApp } from '../../../selectors/app';
+import { getUser } from '../../../selectors/user';
 
 /**
  *  Connector
  */
 export default connect(
   state => ({
-    user: pick(getUser(state), 'data'),
-  }),
-  dispatch => ({
-    onSignOut: () => dispatch(signOut()),
+    app: pick(getApp(state), 'isReady'),
+    user: pick(getUser(state), 'isAuthenticating', 'isAuthenticated'),
   })
-)(Component);
+)(withRouter(Component));

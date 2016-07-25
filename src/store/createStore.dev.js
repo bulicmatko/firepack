@@ -15,12 +15,10 @@ import crashReporter from '../middleware/crashReporter.middleware';
 
 import DevTools from '../components/dev/DevTools';
 
-import reducer from '../reducer';
-
 /**
- *  Create App Store
+ *  Create Store
  */
-const createAppStore = compose(
+export default compose(
   applyMiddleware(logger, crashReporter, thunk),
   window.devToolsExtension
     ? window.devToolsExtension()
@@ -31,18 +29,3 @@ const createAppStore = compose(
     )
   )
 )(createStore);
-
-/**
- *  Create Store
- */
-export default initState => {
-  const store = createAppStore(reducer, initState);
-
-  if (module.hot) {
-    module.hot.accept('../reducer', () => (
-      store.replaceReducer(require('../reducer').default) // eslint-disable-line
-    ));
-  }
-
-  return store;
-};

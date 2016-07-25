@@ -2,19 +2,19 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Route - Util
+  Selectors
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-/**
- *  Routes
- */
-const routes = {
-  root: '/',
-  auth: '/auth',
-};
+import { getApp } from './app';
+import { getUser, getUserData } from './user';
 
-/**
- *  Route
- */
-export default name => routes[name];
+export default {
+  app: {
+    getApp,
+  },
+  user: {
+    getUser,
+    getUserData,
+  },
+};

@@ -11,28 +11,26 @@ import createActionTypes from '../utils/createActionTypes.util';
 /**
  *  App
  */
-export const APP = createActionTypes(
-  'app',
-  [
-    'SETUP',
-  ]
-);
+export const APP = createActionTypes([
+  'SETUP',
+], '@@firepack/app');
 
 /**
  *  Auth
  */
-export const AUTH = createActionTypes(
-  'auth',
-  [
-    'SIGN_IN_WITH_POPUP_START',
-    'SIGN_IN_WITH_POPUP_SUCCESS',
-    'SIGN_IN_WITH_POPUP_FAIL',
+export const AUTH = createActionTypes([
+  'SIGN_IN_WITH_POPUP_START',
+  'SIGN_IN_WITH_POPUP_SUCCESS',
+  'SIGN_IN_WITH_POPUP_FAIL',
 
-    'AUTHENTICATED',
-    'UNAUTHENTICATED',
+  'AUTHENTICATED',
+  'UNAUTHENTICATED',
 
-    'SIGN_OUT_START',
-    'SIGN_OUT_SUCCESS',
-    'SIGN_OUT_FAIL',
-  ]
-);
+  'SIGN_OUT_START',
+  'SIGN_OUT_SUCCESS',
+  'SIGN_OUT_FAIL',
+], '@@firepack/auth');
+
+export default {
+  APP, AUTH,
+};

@@ -1,7 +1,7 @@
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-//  Dashboard Page
+//  Root Container (Production)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -14,30 +14,16 @@
 //  Styles
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.DashboardPage {
+.RootContainer {
   position: relative;
 }
 
-.DashboardPage--Content {
-  text-align: center;
-  padding: rem(60) 0;
+.RootContainer--Content {
+  position: relative;
 
-  > img {
-    width: rem(80); height: rem(80);
+  > .loading-screen {
+    color: color('grey', '600'); text-align: center;
 
-    background-color: color('grey', '200');
-    border-radius: percentage(1/8);
-  }
-
-  > h1 {
-    color: color('grey', '800');
-  }
-
-  > p {
-    color: color('grey', '600');
-  }
-
-  > button {
-    margin-top: rem(20);
+    padding: rem(80) 0;
   }
 }

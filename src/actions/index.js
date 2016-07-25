@@ -2,19 +2,16 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Route - Util
+  Actions
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-/**
- *  Routes
- */
-const routes = {
-  root: '/',
-  auth: '/auth',
-};
+import signInWithPopup from './auth/signInWithPopup.action';
+import signOut from './auth/signOut.action';
 
-/**
- *  Route
- */
-export default name => routes[name];
+export default {
+  auth: {
+    signInWithPopup,
+    signOut,
+  },
+};

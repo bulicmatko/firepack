@@ -20,7 +20,11 @@
 
 .AuthPage--Content {
   text-align: center;
-  padding: rem(30) 0;
+
+  margin: 0 auto;
+  max-width: rem(380);
+
+  padding: rem(60) 0;
 
   > h1 {
     color: color('grey', '800');
@@ -28,17 +32,25 @@
 
   > p {
     color: color('grey', '600');
+    margin-bottom: rem(60);
   }
 
   > ul {
-    margin-top: rem(30);
+    padding: 0 rem(20);
 
     > li {
       list-style: none;
-      margin-top: rem(15);
+      margin-bottom: rem(20);
 
       > button {
-        display: inline-block;
+        font-size: rem(18); line-height: rem(22);
+        color: color('blue-grey', '800');
+
+        display: block; width: percentage(1/1);
+        padding: rem(16) rem(24) rem(14); box-sizing: border-box;
+
+        border: rem(1) solid color('blue-grey', '600'); border-radius: rem(2);
+        background-color: color('white', '500');
       }
     }
   }

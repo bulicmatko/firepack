@@ -20,9 +20,6 @@ export default class extends Component {
   static displayName = 'AuthPage';
 
   static propTypes = {
-    app: PropTypes.shape({
-      isReady: PropTypes.bool.isRequired,
-    }).isRequired,
     onSignInWithFacebook: PropTypes.func.isRequired,
     onSignInWithTwitter: PropTypes.func.isRequired,
     onSignInWithGoogle: PropTypes.func.isRequired,
@@ -30,11 +27,16 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    app: {},
     onSignInWithFacebook: noop,
     onSignInWithTwitter: noop,
     onSignInWithGoogle: noop,
     onSignInWithGithub: noop,
+  };
+
+  static contextTypes = {
+    firebaseAuthProviders: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
   };
 
   handleSignInWithFacebook = (e) => {
@@ -58,32 +60,21 @@ export default class extends Component {
   };
 
   render() {
+    const { firebaseAuthProviders } = this.context;
+
     return (
       <div styleName="AuthPage">
         <div styleName="AuthPage--Content">
           <h1>Firepack App</h1>
-          <p>Welcome to Firepack App Demo</p>
+          <p>Firepack Application Boilerplate</p>
           <ul>
-            <li>
-              <button onClick={this.handleSignInWithFacebook}>
-                Sign in with Facebook
-              </button>
-            </li>
-            <li>
-              <button onClick={this.handleSignInWithTwitter}>
-                Sign in with Twitter
-              </button>
-            </li>
-            <li>
-              <button onClick={this.handleSignInWithGoogle}>
-                Sign in with Google
-              </button>
-            </li>
-            <li>
-              <button onClick={this.handleSignInWithGithub}>
-                Sign in with Github
-              </button>
-            </li>
+            {firebaseAuthProviders.map(authProvider => (
+              <li key={authProvider}>
+                <button onClick={this[`handleSignInWith${authProvider}`]}>
+                  Sign in with {authProvider}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

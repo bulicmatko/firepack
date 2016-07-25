@@ -2,7 +2,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Auth Container - Index
+  Root Container (Development) - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -12,8 +12,8 @@ import pick from 'lodash/pick';
 
 import Component from './Component';
 
-import { getApp } from '../../selectors/app';
-import { getUser } from '../../selectors/user';
+import { getApp } from '../../../selectors/app';
+import { getUser } from '../../../selectors/user';
 
 /**
  *  Connector

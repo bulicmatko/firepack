@@ -2,7 +2,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Root Container (Development)
+  Root Container (Production)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -11,17 +11,13 @@ import cssModules from 'react-css-modules';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
-import pick from 'lodash/pick';
 import noop from 'lodash/noop';
 
-import getApp from '../../selectors/app';
-import getUser from '../../selectors/user';
+import { APP, AUTH } from '../../../../constants/actionTypes.const';
 
-import route from '../../utils/route.util';
+import route from '../../../../utils/route.util';
 
 import styles from './styles';
-
-import { APP, AUTH } from '../../constants/actionTypes.const';
 
 const { location } = window;
 
@@ -34,13 +30,8 @@ class RootContainer extends Component {
 
   static propTypes = {
     router: PropTypes.object.isRequired,
-    app: PropTypes.shape({
-      isReady: PropTypes.bool.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      isAuthenticating: PropTypes.bool.isRequired,
-      isAuthenticated: PropTypes.bool.isRequired,
-    }).isRequired,
+    app: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
   };
@@ -82,7 +73,7 @@ class RootContainer extends Component {
           });
 
           if (location.pathname.startsWith(route('auth'))) {
-            router.replace({ pathname: route('dashboard') });
+            router.replace({ pathname: route('root') });
           }
         } else {
           dispatch({ type: AUTH.UNAUTHENTICATED });
@@ -115,11 +106,7 @@ class RootContainer extends Component {
  *  Connector
  */
 export default connect(
-  state => ({
-    app: pick(getApp(state), 'isReady'),
-    user: pick(getUser(state), 'isAuthenticating', 'isAuthenticated'),
-
-  }),
+  () => ({}),
   dispatch => ({
     dispatch: action => dispatch(action),
   })

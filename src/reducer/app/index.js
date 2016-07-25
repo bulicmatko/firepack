@@ -10,6 +10,8 @@ import { fromJS } from 'immutable';
 
 import { APP } from '../../constants/actionTypes.const';
 
+import createReducer from '../../utils/createReducer.util';
+
 /**
  *  Initial State
  */
@@ -18,21 +20,10 @@ const initState = fromJS({
 });
 
 /**
- *  Hash Map
+ *  Reducer
  */
-const hashMap = {
+export default createReducer({
   [APP.SETUP]: state => (
     state.set('isReady', true)
   ),
-};
-
-/**
- *  App - Reducer
- */
-export default (state = initState, action) => {
-  const { type, payload } = action;
-
-  return hashMap[type]
-    ? hashMap[type](state, payload)
-    : state;
-};
+}, initState);

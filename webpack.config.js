@@ -9,8 +9,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const production = process.env.NODE_ENV === 'production';
-
 /**
  *  Webpack Configuration
  */
@@ -19,15 +17,26 @@ module.exports = {
     index: './src/index',
   },
   output: {
-    path: './public/static',
+    path: './dist',
     filename: '[name].js',
-    publicPath: '/static/',
+    library: 'Firepack',
+    libraryTarget: 'umd',
   },
-  devServer: {
-    contentBase: './public',
-    historyApiFallback: true,
+  externals: {
+    firebase: 'firebase',
+    immutable: 'immutable',
+    lodash: 'lodash',
+    react: 'react',
+    'react-css-modules': 'react',
+    'react-dom': 'react',
+    'react-redux': 'react',
+    'react-router': 'react',
+    'react-router-redux': 'react',
+    redux: 'redux',
+    'redux-thunk': 'redux-thunk',
+    reselect: 'reselect',
   },
-  plugins: production ? [
+  plugins: [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
@@ -37,20 +46,10 @@ module.exports = {
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 15 }),
-    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: true,
       },
-    }),
-  ] : [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
-      __PRODUCTION__: false,
-      __DEVELOPMENT__: true,
     }),
   ],
   module: {
@@ -61,7 +60,6 @@ module.exports = {
           'babel',
         ],
         include: [
-          path.resolve(__dirname, './firepack'),
           path.resolve(__dirname, './src'),
         ],
       }, {
@@ -73,7 +71,6 @@ module.exports = {
           'sass?outputStyle=expanded&sourceMap',
         ],
         include: [
-          path.resolve(__dirname, './firepack'),
           path.resolve(__dirname, './src'),
         ],
       },
