@@ -16,6 +16,11 @@ export default class extends Component {
   static displayName = 'Firepack--AuthPage';
 
   static propTypes = {
+    appTitle: PropTypes.node.isRequired,
+    appDescription: PropTypes.node.isRequired,
+    firebaseAuthProviders: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
     onSignInWithFacebook: PropTypes.func.isRequired,
     onSignInWithTwitter: PropTypes.func.isRequired,
     onSignInWithGoogle: PropTypes.func.isRequired,
@@ -27,12 +32,6 @@ export default class extends Component {
     onSignInWithTwitter: noop,
     onSignInWithGoogle: noop,
     onSignInWithGithub: noop,
-  };
-
-  static contextTypes = {
-    firebaseAuthProviders: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
   };
 
   handleSignInWithFacebook = (e) => {
@@ -56,13 +55,13 @@ export default class extends Component {
   };
 
   render() {
-    const { firebaseAuthProviders } = this.context;
+    const { appTitle, appDescription, firebaseAuthProviders } = this.props;
 
     return (
       <div className="Firepack--AuthPage">
         <div className="Firepack--AuthPage--Content">
-          <h1>Firepack App</h1>
-          <p>Firepack Application Boilerplate</p>
+          <h1>{appTitle}</h1>
+          <p>{appDescription}</p>
           <ul>
             {firebaseAuthProviders.map(authProvider => (
               <li key={authProvider}>

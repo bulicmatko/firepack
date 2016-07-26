@@ -22,6 +22,8 @@ export default class extends Component {
   static displayName = 'Firepack';
 
   static propTypes = {
+    appTitle: PropTypes.node.isRequired,
+    appDescription: PropTypes.node.isRequired,
     routes: PropTypes.object.isRequired,
     reducer: PropTypes.func.isRequired,
     firebaseConfig: PropTypes.object.isRequired,
@@ -31,6 +33,8 @@ export default class extends Component {
   };
 
   static defaultProps = {
+    appTitle: 'Firepack',
+    appDescription: 'Firebase application wrapper',
     routes: {},
     reducer: noop,
     firebaseConfig: {},
@@ -38,14 +42,18 @@ export default class extends Component {
   };
 
   static childContextTypes = {
+    appTitle: PropTypes.node,
+    appDescription: PropTypes.node,
     firebaseConfig: PropTypes.object,
     firebaseAuthProviders: PropTypes.array,
   };
 
   getChildContext() {
-    const { firebaseConfig, firebaseAuthProviders } = this.props;
+    const { appTitle, appDescription, firebaseConfig, firebaseAuthProviders } = this.props;
 
     return {
+      appTitle,
+      appDescription,
       firebaseConfig,
       firebaseAuthProviders,
     };

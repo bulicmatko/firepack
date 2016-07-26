@@ -37,6 +37,14 @@ export default class extends Component {
     children: null,
   };
 
+  static contextTypes = {
+    appTitle: PropTypes.node.isRequired,
+    appDescription: PropTypes.node.isRequired,
+    firebaseAuthProviders: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+  };
+
   componentWillMount() {
     const { router, app, user } = this.props;
 
@@ -47,11 +55,17 @@ export default class extends Component {
 
   render() {
     const { children } = this.props;
+    const { appTitle, appDescription, firebaseAuthProviders } = this.context;
 
     return (
       <div className="Firepack--AuthContainer">
         <div className="Firepack--AuthContainer--Content">
-          {cloneElement(children, { key: location.pathname })}
+          {cloneElement(children, {
+            key: location.pathname,
+            appTitle,
+            appDescription,
+            firebaseAuthProviders,
+          })}
         </div>
       </div>
     );

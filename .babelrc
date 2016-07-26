@@ -1,13 +1,21 @@
 {
+  // Babel Configuration File
+  // See https://babeljs.io/docs/usage/babelrc/ for more details.
+
+  // Presets
   "presets": [
     "es2015",
     "stage-0",
     "react"
   ],
+
+  // Plugins
   "plugins": [
     "transform-flow-strip-types",
     "transform-decorators-legacy"
   ],
+
+  // Environment
   "env": {
     "development": {
       "presets": [

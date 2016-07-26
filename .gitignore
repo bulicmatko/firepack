@@ -1,3 +1,6 @@
+# Git Ignore Configuration File
+# See https://git-scm.com/docs/gitignore for more details.
+
 .DS_Store
 
 .vscode
