@@ -22,5 +22,8 @@ export default connect(
   state => ({
     app: pick(getApp(state), 'isReady'),
     user: pick(getUser(state), 'isAuthenticating', 'isAuthenticated'),
+  }),
+  dispatch => ({
+    dispatch: action => dispatch(action),
   })
 )(withRouter(Component));

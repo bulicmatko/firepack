@@ -15,8 +15,6 @@ import noop from 'lodash/noop';
 import createReducer from './reducer';
 import createStore from './store';
 
-import './styles/global';
-
 /**
  *  Firepack
  */

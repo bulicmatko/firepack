@@ -27,7 +27,6 @@ module.exports = {
     immutable: 'immutable',
     lodash: 'lodash',
     react: 'react',
-    'react-css-modules': 'react',
     'react-dom': 'react',
     'react-redux': 'react',
     'react-router': 'react',

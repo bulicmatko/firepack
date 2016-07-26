@@ -7,17 +7,13 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes } from 'react';
-import cssModules from 'react-css-modules';
 import noop from 'lodash/noop';
-
-import styles from './styles';
 
 /**
  *  Auth Page
  */
-@cssModules(styles)
 export default class extends Component {
-  static displayName = 'AuthPage';
+  static displayName = 'Firepack--AuthPage';
 
   static propTypes = {
     onSignInWithFacebook: PropTypes.func.isRequired,
@@ -63,8 +59,8 @@ export default class extends Component {
     const { firebaseAuthProviders } = this.context;
 
     return (
-      <div styleName="AuthPage">
-        <div styleName="AuthPage--Content">
+      <div className="Firepack--AuthPage">
+        <div className="Firepack--AuthPage--Content">
           <h1>Firepack App</h1>
           <p>Firepack Application Boilerplate</p>
           <ul>

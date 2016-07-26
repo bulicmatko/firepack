@@ -7,20 +7,16 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes, cloneElement } from 'react';
-import cssModules from 'react-css-modules';
 
 import route from '../../../utils/route.util';
-
-import styles from './styles';
 
 const { location } = window;
 
 /**
  *  Workspace Container
  */
-@cssModules(styles)
 export default class extends Component {
-  static displayName = 'WorkspaceContainer';
+  static displayName = 'Firepack--WorkspaceContainer';
 
   static propTypes = {
     router: PropTypes.object.isRequired,
@@ -53,8 +49,8 @@ export default class extends Component {
     const { children } = this.props;
 
     return (
-      <div styleName="WorkspaceContainer">
-        <div styleName="WorkspaceContainer--Content">
+      <div className="WorkspaceContainer">
+        <div className="WorkspaceContainer--Content">
           {cloneElement(children, { key: location.pathname })}
         </div>
       </div>

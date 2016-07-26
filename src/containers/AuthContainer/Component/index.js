@@ -7,20 +7,16 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes, cloneElement } from 'react';
-import cssModules from 'react-css-modules';
 
 import route from '../../../utils/route.util';
-
-import styles from './styles';
 
 const { location } = window;
 
 /**
  *  Auth Container
  */
-@cssModules(styles)
 export default class extends Component {
-  static displayName = 'AuthContainer';
+  static displayName = 'Firepack--AuthContainer';
 
   static propTypes = {
     router: PropTypes.object.isRequired,
@@ -53,8 +49,8 @@ export default class extends Component {
     const { children } = this.props;
 
     return (
-      <div styleName="AuthContainer">
-        <div styleName="AuthContainer--Content">
+      <div className="Firepack--AuthContainer">
+        <div className="Firepack--AuthContainer--Content">
           {cloneElement(children, { key: location.pathname })}
         </div>
       </div>

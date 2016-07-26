@@ -7,9 +7,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes, cloneElement } from 'react';
-import cssModules from 'react-css-modules';
-import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
 import firebase from 'firebase';
 import noop from 'lodash/noop';
 
@@ -19,16 +16,13 @@ import { APP, AUTH } from '../../../../constants/actionTypes.const';
 
 import route from '../../../../utils/route.util';
 
-import styles from './styles';
-
 const { location } = window;
 
 /**
  *  Root Container
  */
-@cssModules(styles)
-class RootContainer extends Component {
-  static displayName = 'RootContainer';
+export default class extends Component {
+  static displayName = 'Firepack--RootContainer';
 
   static propTypes = {
     router: PropTypes.object.isRequired,
@@ -91,11 +85,11 @@ class RootContainer extends Component {
     const { app, user, children } = this.props;
 
     return (
-      <div styleName="RootContainer">
-        <div styleName="RootContainer--Content">
+      <div className="Firepack--RootContainer">
+        <div className="Firepack--RootContainer--Content">
           {
             !app.isReady || user.isAuthenticating
-            ? <div styleName="loading-screen">Please wait...</div>
+            ? <div className="Firepack--LoadingScreen">Please wait...</div>
             : cloneElement(children, { key: location.pathname })
           }
         </div>
@@ -104,13 +98,3 @@ class RootContainer extends Component {
     );
   }
 }
-
-/**
- *  Connector
- */
-export default connect(
-  () => ({}),
-  dispatch => ({
-    dispatch: action => dispatch(action),
-  })
-)(withRouter(RootContainer));
