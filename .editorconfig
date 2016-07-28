@@ -1,10 +1,14 @@
 # EditorConfig Configuration File
 # See http://editorconfig.org/ for more details.
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Project Root
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 root = true
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Apply to all files
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [*]
 charset = utf-8
 end_of_line = lf
@@ -13,7 +17,9 @@ indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Apply to Markdown files
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [*.md]
 indent_size = 4
 trim_trailing_whitespace = false

@@ -1,19 +1,27 @@
 # Flow Configuration File
 # See https://flowtype.org/docs/advanced-configuration.html for more details.
-
+#
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Include
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [include]
 ./src/*.js
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Ignore
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [ignore]
 .*/node_modules/.*
 .*/test/.*
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Libs
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [libs]
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Options
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 [options]
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable

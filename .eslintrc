@@ -1,20 +1,28 @@
 {
   // ESLint Configuration File
-  // See http://eslint.org/docs/rules/ for more details.
+  // See http://eslint.org/ for more details.
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Parser
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "parser": "babel-eslint",
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Extends
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "extends": "airbnb",
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Plugins
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "plugins": [
     "react"
   ],
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Rules
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "rules": {
-     "import/no-unresolved": 0,
+    //
   }
 }
