@@ -3,11 +3,6 @@
   "version": "0.0.0-semantically-released",
   "description": "Firebase application wrapper",
   "main": "./index.js",
-  "files": [
-    "./dist",
-    "./index.js",
-    "./README.md"
-  ],
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
     "build:dev": "NODE_ENV=development webpack --progress --colors",
