@@ -8,7 +8,7 @@
 
 import { expect } from 'chai';
 
-import createActionTypes from '../../firepack/utils/createActionTypes.util';
+import createActionTypes from '../../src/utils/createActionTypes.util';
 
 /**
  *  Create Action Types Util - Test
@@ -16,10 +16,10 @@ import createActionTypes from '../../firepack/utils/createActionTypes.util';
 describe('Create Action Types Util', () => {
   it('should create action types object', () => {
     const expectedObject = {
-      ACTION_1: '@@firepack/prefix/ACTION_1',
-      ACTION_2: '@@firepack/prefix/ACTION_2',
+      ACTION_1: '@@firepack/ACTION_1',
+      ACTION_2: '@@firepack/ACTION_2',
     };
-    const resultObject = createActionTypes('prefix', ['ACTION_1', 'ACTION_2']);
+    const resultObject = createActionTypes(['ACTION_1', 'ACTION_2'], '@@firepack');
 
     expect(resultObject).to.deep.equal(expectedObject);
   });

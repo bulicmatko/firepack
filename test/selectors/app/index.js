@@ -10,7 +10,7 @@ import chai, { expect } from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { fromJS } from 'immutable';
 
-import appSelector from '../../../firepack/selectors/app';
+import { getApp } from '../../../src/selectors/app';
 
 chai.use(chaiImmutable);
 
@@ -25,7 +25,7 @@ describe('App Selector', () => {
       }),
     };
     const expectedState = state.app.toJS();
-    const newState = appSelector(state);
+    const newState = getApp(state);
 
     expect(newState).to.deep.equal(expectedState);
   });

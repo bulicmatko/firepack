@@ -10,9 +10,9 @@ import chai, { expect } from 'chai';
 import chaiImmutable from 'chai-immutable';
 import { fromJS } from 'immutable';
 
-import { APP } from '../../../firepack/constants/actionTypes.const';
+import { APP } from '../../../src/constants/actionTypes.const';
 
-import appReducer from '../../../firepack/reducer/app';
+import appReducer from '../../../src/reducer/app';
 
 chai.use(chaiImmutable);
 
