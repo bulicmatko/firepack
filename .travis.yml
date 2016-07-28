@@ -12,11 +12,16 @@ branches:
     - master
 before_install:
   - npm i -g npm@^3.0.0
+  - npm i -g nyc@^7.0.0
+  - npm i -g codecov@^1.0.0
+  - npm i -g semantic-release@^4.3.5
 before_script:
   - npm prune
 script:
   - npm run check
-  - npm run check-coverage
 after_success:
-  - npm run report-coverage
-  - npm run semantic-release
+  - nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov
+  - codecov
+  - semantic-release pre
+  - npm publish
+  - semantic-release post

@@ -1,24 +1,28 @@
 {
   "name": "firepack",
   "version": "0.0.0-semantically-released",
-  "description": "Firebase application wrapper",
+  "description": "Auth wrapper for Firebase applications built with React and Redux",
   "main": "./index.js",
+  "files": [
+    "./index.js",
+    "./LICENSE",
+    "./README.md"
+  ],
+  "directories": {
+    "lib": "./lib"
+  },
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
     "build:dev": "NODE_ENV=development webpack --progress --colors",
     "build:prod": "NODE_ENV=production webpack --progress --colors",
     "check": "npm run lint && npm run flow && npm run test && npm run cover && npm run check-coverage",
-    "check-coverage": "nyc check-coverage --statements=80 --branches=80 --functions=80 --lines=80",
+    "check-coverage": "nyc check-coverage --statements=100 --branches=50 --functions=100 --lines=100",
     "commit": "git-cz",
-    "cover": "nyc npm run test --report-dir=./public/coverage --reporter=html --reporter=lcov && nyc report --report-dir=./public/coverage",
-    "deploy": "npm run check && npm run build && firebase deploy",
+    "cover": "nyc npm run test --report-dir=./coverage --reporter=html --reporter=lcov && nyc report --report-dir=./coverage",
     "flow": "flow",
     "lint": "eslint ./src",
-    "report-coverage": "nyc report --report-dir=./public/coverage --reporter=text-lcov > ./public/coverage/coverage.lcov && ./node_modules/.bin/codecov",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "server": "firebase serve",
     "start": "webpack-dev-server --inline --hot --progress --colors --port=8888",
-    "test": "mocha --recursive --compilers=js:babel-register",
+    "test": "mocha --recursive --compilers=js:babel-core/register",
     "test:watch": "npm run test -- --watch"
   },
   "repository": {
@@ -27,7 +31,10 @@
   },
   "keywords": [
     "firepack",
+    "auth",
+    "wrapper",
     "firebase",
+    "application",
     "react",
     "redux"
   ],
@@ -46,6 +53,9 @@
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
   },
@@ -58,6 +68,9 @@
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
   },
@@ -69,12 +82,9 @@
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
-    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.9.0",
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
-    "codecov": "^1.0.1",
     "commitizen": "^2.8.2",
     "cz-conventional-changelog": "^1.1.6",
     "eslint": "^2.9.0",
@@ -82,21 +92,16 @@
     "eslint-plugin-import": "^1.10.2",
     "eslint-plugin-jsx-a11y": "^1.5.5",
     "eslint-plugin-react": "^5.2.2",
-    "firebase-tools": "^3.0.4",
     "flow-bin": "^0.28.0",
     "ghooks": "^1.3.2",
     "mocha": "^2.5.3",
     "nyc": "^7.0.0",
-    "redux-devtools": "^3.3.1",
-    "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.11",
-    "semantic-release": "^4.3.5",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run check"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
