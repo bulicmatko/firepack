@@ -9,6 +9,8 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const production = process.env.NODE_ENV === 'production';
+
 /**
  *  Webpack Configuration
  */
@@ -18,36 +20,39 @@ module.exports = {
   },
   output: {
     path: './dist',
-    filename: '[name].js',
     library: 'Firepack',
+    filename: production ? 'firepack.prod.js' : 'firepack.dev.js',
     libraryTarget: 'umd',
   },
   externals: {
+    react: 'react',
     firebase: 'firebase',
     immutable: 'immutable',
     lodash: 'lodash',
-    react: 'react',
-    'react-dom': 'react',
-    'react-redux': 'react',
-    'react-router': 'react',
-    'react-router-redux': 'react',
+    'react-redux': 'react-redux',
+    'react-router': 'react-router',
+    'react-router-redux': 'react-router-redux',
     redux: 'redux',
     'redux-thunk': 'redux-thunk',
     reselect: 'reselect',
   },
-  plugins: [
+  plugins: production ? [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
-      __PRODUCTION__: true,
-      __DEVELOPMENT__: false,
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: true,
+      },
+    }),
+  ] : [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
       },
     }),
   ],
@@ -61,21 +66,10 @@ module.exports = {
         include: [
           path.resolve(__dirname, './src'),
         ],
-      }, {
-        test: /\.scss$/,
-        loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
-          'resolve-url',
-          'sass?outputStyle=expanded&sourceMap',
-        ],
-        include: [
-          path.resolve(__dirname, './src'),
-        ],
       },
     ],
   },
   resolve: {
-    extensions: ['', '.js', '.scss'],
+    extensions: ['', '.js'],
   },
 };

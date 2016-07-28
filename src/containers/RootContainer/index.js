@@ -6,8 +6,8 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-if (__DEVELOPMENT__) { // eslint-disable-line
-  module.exports = require('./RootContainer.dev'); // eslint-disable-line
-} else {
+if (process.env.NODE_ENV === 'production') {
   module.exports = require('./RootContainer.prod'); // eslint-disable-line
+} else {
+  module.exports = require('./RootContainer.dev'); // eslint-disable-line
 }

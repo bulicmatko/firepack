@@ -1,10 +1,42 @@
 # Git Ignore Configuration File
 # See https://git-scm.com/docs/gitignore for more details.
 
-.DS_Store
+#---------------------------------
+# Directories
+#---------------------------------
+dist/
+node_modules/
 
-.vscode
+#---------------------------------
+# Files
+#---------------------------------
+npm-debug.log
+
+#---------------------------------
+# Extensions
+#---------------------------------
+*.gz
+*.log
+*.rar
+*.tar
+*.zip
+
+#---------------------------------
+# Project generated
+#---------------------------------
 .nyc_output
 
-npm-debug.log
-node_modules/
+#---------------------------------
+# IDE generated
+#---------------------------------
+.idea/
+.vscode/
+.project
+*.iml
+
+#---------------------------------
+# OS generated
+#---------------------------------
+__MACOSX/
+.DS_Store
+Thumbs.db
