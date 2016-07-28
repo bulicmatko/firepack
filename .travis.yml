@@ -7,10 +7,7 @@ notifications:
   email: false
 node_js:
   - 4.2
-branches:
-  only:
-    - master
-before_install:
+install:
   - npm i -g npm@^3.0.0
   - npm i -g nyc@^7.0.0
   - npm i -g codecov@^1.0.0
@@ -19,9 +16,14 @@ before_script:
   - npm prune
 script:
   - npm run check
-after_success:
-  - nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov
-  - codecov
-  - semantic-release pre
-  - npm publish
-  - semantic-release post
+deploy:
+  provider: script
+  script:
+    - npm run build
+    - nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov
+    - codecov
+    - semantic-release pre
+    - npm publish
+    - semantic-release post
+  on:
+    branch: master

@@ -15,14 +15,13 @@
     "build": "npm run build:dev && npm run build:prod",
     "build:dev": "NODE_ENV=development webpack --progress --colors",
     "build:prod": "NODE_ENV=production webpack --progress --colors",
-    "check": "npm run lint && npm run flow && npm run cover && npm run check-coverage",
-    "check-coverage": "nyc check-coverage --statements=100 --branches=75 --functions=100 --lines=100",
+    "check": "npm run check:lint && npm run check:flow && npm run check:coverage",
+    "check:coverage": "nyc --reporter=html --check-coverage --statements=100 --branches=75 --functions=100 --lines=100 npm run test",
+    "check:flow": "flow",
+    "check:lint": "eslint ./src ./test",
     "commit": "git-cz",
-    "cover": "nyc --reporter=html npm run test",
-    "flow": "flow",
-    "lint": "eslint ./src",
-    "test": "mocha --recursive --compilers=js:babel-core/register",
-    "test:watch": "npm run test -- --watch"
+    "tdd": "npm run test -- --watch",
+    "test": "mocha --recursive --compilers=js:babel-core/register"
   },
   "repository": {
     "type": "git",
