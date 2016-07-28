@@ -13894,8 +13894,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _reactRouter = __webpack_require__(4);
-
 	var _pick = __webpack_require__(375);
 
 	var _pick2 = _interopRequireDefault(_pick);
@@ -13913,14 +13911,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 *  Connector
 	 */
-	/* eslint-env browser */
-
-	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-	  Root Container (Development) - Index
-
-	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
 	exports.default = (0, _reactRedux.connect)(function (state) {
 	  return {
 	    app: (0, _pick2.default)((0, _app.getApp)(state), 'isReady'),
@@ -13932,7 +13922,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return _dispatch(action);
 	    }
 	  };
-	})((0, _reactRouter.withRouter)(_Component2.default));
+	})(_Component2.default); /* eslint-env browser */
+
+	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	  Root Container (Development) - Index
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 /***/ },
 /* 375 */
@@ -14038,7 +14034,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _class, _temp; /* eslint-env browser */
+	var _class, _class2, _temp; /* eslint-env browser */
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -14049,6 +14045,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(4);
 
 	var _firebase = __webpack_require__(366);
 
@@ -14083,7 +14081,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *  Root Container
 	 */
 
-	var _default = (_temp = _class = function (_Component) {
+	var _default = (0, _reactRouter.withRouter)(_class = (_temp = _class2 = function (_Component) {
 	  _inherits(_default, _Component);
 
 	  function _default() {
@@ -14158,21 +14156,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return _default;
-	}(_react.Component), _class.displayName = 'Firepack--RootContainer', _class.propTypes = {
+	}(_react.Component), _class2.displayName = 'Firepack--RootContainer', _class2.propTypes = {
 	  router: _react.PropTypes.object.isRequired,
 	  app: _react.PropTypes.object.isRequired,
 	  user: _react.PropTypes.object.isRequired,
 	  dispatch: _react.PropTypes.func.isRequired,
 	  children: _react.PropTypes.node.isRequired
-	}, _class.defaultProps = {
+	}, _class2.defaultProps = {
 	  router: {},
 	  app: {},
 	  user: {},
 	  dispatch: _noop2.default,
 	  children: null
-	}, _class.contextTypes = {
+	}, _class2.contextTypes = {
 	  firebaseConfig: _react.PropTypes.object.isRequired
-	}, _temp);
+	}, _temp)) || _class;
 
 	exports.default = _default;
 
@@ -14221,8 +14219,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _reactRouter = __webpack_require__(4);
-
 	var _pick = __webpack_require__(375);
 
 	var _pick2 = _interopRequireDefault(_pick);
@@ -14240,20 +14236,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 *  Connector
 	 */
-	/* eslint-env browser */
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return {
+	    app: (0, _pick2.default)((0, _app.getApp)(state), 'isReady'),
+	    user: (0, _pick2.default)((0, _user.getUser)(state), 'isAuthenticating', 'isAuthenticated')
+	  };
+	})(_Component2.default); /* eslint-env browser */
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	  Auth Container - Index
 
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-	exports.default = (0, _reactRedux.connect)(function (state) {
-	  return {
-	    app: (0, _pick2.default)((0, _app.getApp)(state), 'isReady'),
-	    user: (0, _pick2.default)((0, _user.getUser)(state), 'isAuthenticating', 'isAuthenticated')
-	  };
-	})((0, _reactRouter.withRouter)(_Component2.default));
 
 /***/ },
 /* 381 */
@@ -14268,7 +14262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _class, _temp; /* eslint-env browser */
+	var _class, _class2, _temp; /* eslint-env browser */
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -14279,6 +14273,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(4);
 
 	var _route = __webpack_require__(379);
 
@@ -14299,7 +14295,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *  Auth Container
 	 */
 
-	var _default = (_temp = _class = function (_Component) {
+	var _default = (0, _reactRouter.withRouter)(_class = (_temp = _class2 = function (_Component) {
 	  _inherits(_default, _Component);
 
 	  function _default() {
@@ -14349,7 +14345,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return _default;
-	}(_react.Component), _class.displayName = 'Firepack--AuthContainer', _class.propTypes = {
+	}(_react.Component), _class2.displayName = 'Firepack--AuthContainer', _class2.propTypes = {
 	  router: _react.PropTypes.object.isRequired,
 	  app: _react.PropTypes.shape({
 	    isReady: _react.PropTypes.bool.isRequired
@@ -14359,16 +14355,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    isAuthenticated: _react.PropTypes.bool.isRequired
 	  }).isRequired,
 	  children: _react.PropTypes.node.isRequired
-	}, _class.defaultProps = {
+	}, _class2.defaultProps = {
 	  router: {},
 	  app: {},
 	  user: {},
 	  children: null
-	}, _class.contextTypes = {
+	}, _class2.contextTypes = {
 	  appTitle: _react.PropTypes.node.isRequired,
 	  appDescription: _react.PropTypes.node.isRequired,
 	  firebaseAuthProviders: _react.PropTypes.arrayOf(_react.PropTypes.string.isRequired).isRequired
-	}, _temp);
+	}, _temp)) || _class;
 
 	exports.default = _default;
 
@@ -14383,8 +14379,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	var _reactRedux = __webpack_require__(3);
-
-	var _reactRouter = __webpack_require__(4);
 
 	var _pick = __webpack_require__(375);
 
@@ -14403,20 +14397,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 *  Connector
 	 */
-	/* eslint-env browser */
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return {
+	    app: (0, _pick2.default)((0, _app.getApp)(state), 'isReady'),
+	    user: (0, _pick2.default)((0, _user.getUser)(state), 'isAuthenticating', 'isAuthenticated')
+	  };
+	})(_Component2.default); /* eslint-env browser */
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 	  Workspace Container - Index
 
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-	exports.default = (0, _reactRedux.connect)(function (state) {
-	  return {
-	    app: (0, _pick2.default)((0, _app.getApp)(state), 'isReady'),
-	    user: (0, _pick2.default)((0, _user.getUser)(state), 'isAuthenticating', 'isAuthenticated')
-	  };
-	})((0, _reactRouter.withRouter)(_Component2.default));
 
 /***/ },
 /* 383 */
@@ -14431,7 +14423,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _class, _temp; /* eslint-env browser */
+	var _class, _class2, _temp; /* eslint-env browser */
 
 	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -14442,6 +14434,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(4);
 
 	var _route = __webpack_require__(379);
 
@@ -14462,7 +14456,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 *  Workspace Container
 	 */
 
-	var _default = (_temp = _class = function (_Component) {
+	var _default = (0, _reactRouter.withRouter)(_class = (_temp = _class2 = function (_Component) {
 	  _inherits(_default, _Component);
 
 	  function _default() {
@@ -14503,7 +14497,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }]);
 
 	  return _default;
-	}(_react.Component), _class.displayName = 'Firepack--WorkspaceContainer', _class.propTypes = {
+	}(_react.Component), _class2.displayName = 'Firepack--WorkspaceContainer', _class2.propTypes = {
 	  router: _react.PropTypes.object.isRequired,
 	  app: _react.PropTypes.shape({
 	    isReady: _react.PropTypes.bool.isRequired
@@ -14513,12 +14507,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    isAuthenticated: _react.PropTypes.bool.isRequired
 	  }).isRequired,
 	  children: _react.PropTypes.node.isRequired
-	}, _class.defaultProps = {
+	}, _class2.defaultProps = {
 	  router: {},
 	  app: {},
 	  user: {},
 	  children: null
-	}, _temp);
+	}, _temp)) || _class;
 
 	exports.default = _default;
 

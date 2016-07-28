@@ -7,6 +7,7 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes, cloneElement } from 'react';
+import { withRouter } from 'react-router';
 
 import route from '../../../utils/route.util';
 
@@ -15,6 +16,7 @@ const { location } = window;
 /**
  *  Auth Container
  */
+@withRouter
 export default class extends Component {
   static displayName = 'Firepack--AuthContainer';
 

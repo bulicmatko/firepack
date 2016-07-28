@@ -7,7 +7,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import pick from 'lodash/pick';
 
 import Component from './Component';
@@ -26,4 +25,4 @@ export default connect(
   dispatch => ({
     dispatch: action => dispatch(action),
   })
-)(withRouter(Component));
+)(Component);

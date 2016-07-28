@@ -7,7 +7,6 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import pick from 'lodash/pick';
 
 import Component from './Component';
@@ -23,4 +22,4 @@ export default connect(
     app: pick(getApp(state), 'isReady'),
     user: pick(getUser(state), 'isAuthenticating', 'isAuthenticated'),
   })
-)(withRouter(Component));
+)(Component);

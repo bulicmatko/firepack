@@ -7,6 +7,7 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 import React, { Component, PropTypes, cloneElement } from 'react';
+import { withRouter } from 'react-router';
 import firebase from 'firebase';
 import noop from 'lodash/noop';
 
@@ -21,6 +22,7 @@ const { location } = window;
 /**
  *  Root Container
  */
+@withRouter
 export default class extends Component {
   static displayName = 'Firepack--RootContainer';
 
