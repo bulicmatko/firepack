@@ -34,7 +34,7 @@ export default class extends Component {
 
   static defaultProps = {
     appTitle: 'Firepack',
-    appDescription: 'Firebase application wrapper',
+    appDescription: 'Auth wrapper for Firebase applications built with React and Redux',
     routes: {},
     reducer: noop,
     firebaseConfig: {},
