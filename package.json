@@ -4,6 +4,7 @@
   "description": "Auth wrapper for Firebase applications built with React and Redux",
   "main": "./index.js",
   "files": [
+    "./lib",
     "./index.js",
     "./LICENSE",
     "./README.md"
