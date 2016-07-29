@@ -7,11 +7,13 @@ notifications:
   email: false
 node_js:
   - 4.2
-install:
+before_install:
   - npm i -g npm@^3.0.0
   - npm i -g nyc@^7.0.0
   - npm i -g codecov@^1.0.0
   - npm i -g semantic-release@^4.3.5
+install:
+  - npm i
 before_script:
   - npm prune
 script:
