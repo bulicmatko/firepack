@@ -1,18 +1,28 @@
 {
   // ESLint Configuration File
-  // See http://eslint.org/docs/rules/ for more details.
+  // See http://eslint.org/ for more details.
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Parser
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "parser": "babel-eslint",
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Extends
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "extends": "airbnb",
 
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  // Plugins
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  "plugins": [
+    "react"
+  ],
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   // Rules
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   "rules": {
-    "comma-dangle": [2, "never"],
-    "indent": [2, 4, { "SwitchCase": 1, "VariableDeclarator": 1 }],
-    "space-before-function-paren": [2, { "anonymous": "always", "named": "always" }],
-    "new-cap": 0
+    //
   }
 }

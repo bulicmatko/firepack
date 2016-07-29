@@ -1,48 +1,17 @@
+/* eslint-env browser */
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    Firepack - Index
+  Firepack - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes } from 'react';
+export { default } from './Firepack';
 
-import { initStores } from './app/stores';
-import { initServices } from './app/services';
+export { default as actions } from './actions';
+export { default as selectors } from './selectors';
 
-import App from './app';
+export { default as registerRoutes } from './routes';
 
-export { default as AppWrap } from './_lib/components/AppWrap';
-export { default as AppSidebar } from './_lib/components/AppSidebar';
-export { default as AppMain } from './_lib/components/AppMain';
-
-/**
- *  Firepack
- */
-class Firepack extends Component {
-    static displayName = 'Firepack';
-
-    static propTypes = {
-        children: PropTypes.element
-    };
-
-    constructor (props) {
-        super(props);
-
-        const { firebaseUrl } = props;
-
-        initStores({ firebaseUrl });
-        initServices({ firebaseUrl });
-    }
-
-    render () {
-        return (
-            <App {...this.props}>
-                {this.props.children}
-            </App>
-        );
-    }
-}
-
-// Export Firepack
-export default Firepack;
+export { default as createReducer } from './utils/createReducer.util';
+export { default as createActionTypes } from './utils/createActionTypes.util';
