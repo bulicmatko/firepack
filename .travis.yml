@@ -18,14 +18,12 @@ before_script:
   - npm prune
 script:
   - npm run check
-deploy:
-  provider: script
-  script:
-    - npm run build
-    - nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov
-    - codecov
-    - semantic-release pre
-    - npm publish
-    - semantic-release post
-  on:
-    branch: master
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      npm run build;
+      nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov;
+      codecov;
+      semantic-release pre;
+      npm publish;
+      semantic-release post;
+    fi
