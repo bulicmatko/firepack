@@ -12,7 +12,7 @@ import LogMonitor from 'redux-devtools-log-monitor';
 import DockMonitor from 'redux-devtools-dock-monitor';
 
 /**
- *  Create Dev Tools
+ *  Dev Tools
  */
 export default createDevTools(
   <DockMonitor

@@ -2,7 +2,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Create Store (Development)
+  Configure Store (Development)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -15,16 +15,18 @@ import crashReporter from '../middleware/crashReporter.middleware';
 
 import DevTools from '../components/dev/DevTools';
 
+const { location, devToolsExtension } = window;
+
 /**
- *  Create Store
+ *  Configure Store
  */
 export default compose(
   applyMiddleware(logger, crashReporter, thunk),
-  window.devToolsExtension
-    ? window.devToolsExtension()
+  devToolsExtension
+    ? devToolsExtension()
     : DevTools.instrument(),
   persistState(
-    window.location.href.match(
+    location.href.match(
       /[?&]debug_session=([^&]+)\b/
     )
   )

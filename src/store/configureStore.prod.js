@@ -2,7 +2,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Create Store (Production)
+  Configure Store (Production)
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -10,7 +10,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 /**
- *  Create Store
+ *  Configure Store
  */
 export default compose(
   applyMiddleware(thunk)

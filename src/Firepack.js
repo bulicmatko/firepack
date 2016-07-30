@@ -13,7 +13,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import noop from 'lodash/noop';
 
 import createReducer from './reducer';
-import createStore from './store';
+import configureStore from './store';
 
 /**
  *  Firepack
@@ -62,7 +62,7 @@ export default class extends Component {
   render() {
     const { routes, reducer } = this.props;
 
-    const store = createStore(createReducer(reducer), {});
+    const store = configureStore(createReducer(reducer), {});
     const history = syncHistoryWithStore(browserHistory, store);
 
     return (

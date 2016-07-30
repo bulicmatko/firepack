@@ -7,7 +7,7 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./createStore.prod'); // eslint-disable-line
+  module.exports = require('./configureStore.prod'); // eslint-disable-line
 } else {
-  module.exports = require('./createStore.dev'); // eslint-disable-line
+  module.exports = require('./configureStore.dev'); // eslint-disable-line
 }
