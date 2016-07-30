@@ -14,7 +14,7 @@ a **subject of breaking changes** in near future.
 
 ## Demo
 To see it in action with [Firepack App](https://github.com/bulicmatko/firepack-app)
-please check the [demo](https://firepack.firebaseapp.com/).
+please check the [demo](https://firepack-app.firebaseapp.com/).
 
 ## Contributing
 If you want to contribute or share your ideas, please feel free to [contact me](mailto:bulicmatko@gmail.com).
