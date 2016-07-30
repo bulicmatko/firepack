@@ -2,7 +2,7 @@
   "name": "firepack",
   "version": "0.0.0-semantically-released",
   "description": "Auth wrapper for Firebase applications built with React and Redux",
-  "main": "./index.js",
+  "main": "index.js",
   "files": [
     "lib",
     "index.js",
@@ -10,7 +10,7 @@
     "README.md"
   ],
   "directories": {
-    "lib": "./lib"
+    "lib": "lib"
   },
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
@@ -19,7 +19,7 @@
     "check": "npm run check:eslint && npm run check:flow && npm run check:coverage",
     "check:coverage": "nyc --reporter=html --check-coverage --statements=100 --branches=75 --functions=100 --lines=100 npm run test",
     "check:flow": "flow",
-    "check:eslint": "eslint ./src ./test",
+    "check:eslint": "eslint src test",
     "commit": "git-cz",
     "tdd": "npm run test -- --watch",
     "test": "mocha --recursive --compilers=js:babel-core/register"
@@ -103,7 +103,7 @@
       "pre-commit": "npm run check"
     },
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-conventional-changelog"
     }
   },
   "engines": {
