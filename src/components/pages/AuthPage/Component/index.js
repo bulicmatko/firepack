@@ -8,6 +8,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import noop from 'lodash/noop';
+import omit from 'lodash/omit';
 
 /**
  *  Auth Page
@@ -18,20 +19,29 @@ export default class extends Component {
   static propTypes = {
     appTitle: PropTypes.node.isRequired,
     appDescription: PropTypes.node.isRequired,
-    firebaseAuthProviders: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
+    firebaseAuthProviders: PropTypes.shape({
+      EmailAndPassword: PropTypes.bool.isRequired,
+      Facebook: PropTypes.bool.isRequired,
+      Twitter: PropTypes.bool.isRequired,
+      Google: PropTypes.bool.isRequired,
+      Github: PropTypes.bool.isRequired,
+    }).isRequired,
     onSignInWithFacebook: PropTypes.func.isRequired,
     onSignInWithTwitter: PropTypes.func.isRequired,
     onSignInWithGoogle: PropTypes.func.isRequired,
     onSignInWithGithub: PropTypes.func.isRequired,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
+    appTitle: 'Firepack',
+    appDescription: 'Auth wrapper for Firebase applications built with React and Redux',
+    firebaseAuthProviders: {},
     onSignInWithFacebook: noop,
     onSignInWithTwitter: noop,
     onSignInWithGoogle: noop,
     onSignInWithGithub: noop,
+    children: null,
   };
 
   handleSignInWithFacebook = (e) => {
@@ -55,20 +65,46 @@ export default class extends Component {
   };
 
   render() {
-    const { appTitle, appDescription, firebaseAuthProviders } = this.props;
+    const { appTitle, appDescription, firebaseAuthProviders, children } = this.props;
+    const firebaseAuthSocialProvidersArray = Object.keys(
+      omit(firebaseAuthProviders, 'EmailAndPassword')
+    ).filter(authProvider => firebaseAuthProviders[authProvider]);
 
     return (
       <div className="Firepack--AuthPage">
         <div className="Firepack--AuthPage--Content">
           <h1>{appTitle}</h1>
           <p>{appDescription}</p>
+          {firebaseAuthProviders.EmailAndPassword && (
+            <div>
+              {children}
+              {(firebaseAuthProviders.Facebook || firebaseAuthProviders.Twitter ||
+                firebaseAuthProviders.Google || firebaseAuthProviders.Github) && (
+                <div>
+                  or continue with
+                </div>
+              )}
+            </div>
+          )}
+          {!firebaseAuthProviders.EmailAndPassword && (
+            <div>
+              Continue in with
+            </div>
+          )}
           <ul>
-            {firebaseAuthProviders.map(authProvider => (
-              <li key={authProvider}>
-                <button onClick={this[`handleSignInWith${authProvider}`]}>
-                  Sign in with {authProvider}
-                </button>
-              </li>
+            {firebaseAuthSocialProvidersArray.map((authProvider, i) => (
+              firebaseAuthProviders[authProvider] &&
+                <li
+                  key={firebaseAuthSocialProvidersArray[i]}
+                  style={{ width: firebaseAuthSocialProvidersArray.length % 2 ? '100%' : '50%' }}
+                >
+                  <button
+                    onClick={this[`handleSignInWith${firebaseAuthSocialProvidersArray[i]}`]}
+                    className={`Firepack--ProviderButton--${firebaseAuthSocialProvidersArray[i]}`}
+                  >
+                    {firebaseAuthSocialProvidersArray[i]}
+                  </button>
+                </li>
             ))}
           </ul>
         </div>

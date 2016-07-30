@@ -2,15 +2,15 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Actions
+  Firebase Api - Index
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import createUserWithEmailAndPassword from './auth/createUserWithEmailAndPassword.action';
-import signInWithEmailAndPassword from './auth/signInWithEmailAndPassword.action';
-import sendPasswordResetEmail from './auth/sendPasswordResetEmail.action';
-import signInWithPopup from './auth/signInWithPopup.action';
-import signOut from './auth/signOut.action';
+import createUserWithEmailAndPassword from './auth/createUserWithEmailAndPassword';
+import signInWithEmailAndPassword from './auth/signInWithEmailAndPassword';
+import sendPasswordResetEmail from './auth/sendPasswordResetEmail';
+import signInWithPopup from './auth/signInWithPopup';
+import signOut from './auth/signOut';
 
 export const auth = {
   createUserWithEmailAndPassword,

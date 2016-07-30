@@ -20,5 +20,5 @@ please check the [demo](https://firepack-app.firebaseapp.com/).
 If you want to contribute or share your ideas, please feel free to [contact me](mailto:bulicmatko@gmail.com).
 
 ## License
-Copyright (c) 2015 [Matko Bulic](mailto:bulicmatko@gmail.com)  
+Copyright (c) 2016 [Matko Bulic](mailto:bulicmatko@gmail.com)  
 Licensed under the [MIT License](https://github.com/bulicmatko/firepack/blob/master/LICENSE)

@@ -42,9 +42,13 @@ export default class extends Component {
   static contextTypes = {
     appTitle: PropTypes.node.isRequired,
     appDescription: PropTypes.node.isRequired,
-    firebaseAuthProviders: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
+    firebaseAuthProviders: PropTypes.shape({
+      EmailAndPassword: PropTypes.bool.isRequired,
+      Facebook: PropTypes.bool.isRequired,
+      Twitter: PropTypes.bool.isRequired,
+      Google: PropTypes.bool.isRequired,
+      Github: PropTypes.bool.isRequired,
+    }).isRequired,
   };
 
   componentWillMount() {

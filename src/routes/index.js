@@ -11,6 +11,9 @@ import AuthContainer from '../containers/AuthContainer';
 import WorkspaceContainer from '../containers/WorkspaceContainer';
 
 import AuthPage from '../components/pages/AuthPage';
+import SignUpPage from '../components/pages/SignUpPage';
+import SignInPage from '../components/pages/SignInPage';
+import ResetPasswordPage from '../components/pages/ResetPasswordPage';
 
 import route from '../utils/route.util';
 
@@ -33,6 +36,23 @@ export default (routes, indexRoute) => ({
         {
           path: route('auth'),
           component: AuthPage,
+          indexRoute: {
+            component: SignInPage,
+          },
+          childRoutes: [
+            {
+              path: route('auth.sign-up'),
+              component: SignUpPage,
+            },
+            {
+              path: route('auth.sign-in'),
+              component: SignInPage,
+            },
+            {
+              path: route('auth.reset-password'),
+              component: ResetPasswordPage,
+            },
+          ],
         },
       ],
     },

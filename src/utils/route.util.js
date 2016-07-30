@@ -12,6 +12,9 @@
 const routes = {
   root: '/',
   auth: '/auth',
+  'auth.sign-up': '/auth/sign-up',
+  'auth.sign-in': '/auth/sign-in',
+  'auth.reset-password': '/auth/reset-password',
 };
 
 /**

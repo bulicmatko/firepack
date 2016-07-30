@@ -26,10 +26,19 @@ export default class extends Component {
     appDescription: PropTypes.node.isRequired,
     routes: PropTypes.object.isRequired,
     reducer: PropTypes.func.isRequired,
-    firebaseConfig: PropTypes.object.isRequired,
-    firebaseAuthProviders: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
+    firebaseConfig: PropTypes.shape({
+      apiKey: PropTypes.string.isRequired,
+      authDomain: PropTypes.string.isRequired,
+      databaseURL: PropTypes.string.isRequired,
+      storageBucket: PropTypes.string.isRequired,
+    }).isRequired,
+    firebaseAuthProviders: PropTypes.shape({
+      EmailAndPassword: PropTypes.bool.isRequired,
+      Facebook: PropTypes.bool.isRequired,
+      Twitter: PropTypes.bool.isRequired,
+      Google: PropTypes.bool.isRequired,
+      Github: PropTypes.bool.isRequired,
+    }).isRequired,
   };
 
   static defaultProps = {
@@ -38,14 +47,20 @@ export default class extends Component {
     routes: {},
     reducer: noop,
     firebaseConfig: {},
-    firebaseAuthProviders: ['Google'],
+    firebaseAuthProviders: {
+      EmailAndPassword: true,
+      Facebook: true,
+      Twitter: true,
+      Google: true,
+      Github: true,
+    },
   };
 
   static childContextTypes = {
     appTitle: PropTypes.node,
     appDescription: PropTypes.node,
     firebaseConfig: PropTypes.object,
-    firebaseAuthProviders: PropTypes.array,
+    firebaseAuthProviders: PropTypes.object,
   };
 
   getChildContext() {

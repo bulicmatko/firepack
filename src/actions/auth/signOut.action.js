@@ -6,7 +6,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import signOut from '../../firebase/api/auth/signOut';
+import { auth as FirebaseAuthApi } from '../../firebase/api';
 
 import { AUTH } from '../../constants/actionTypes.const';
 
@@ -16,7 +16,7 @@ import { AUTH } from '../../constants/actionTypes.const';
 export default () => dispatch => {
   dispatch({ type: AUTH.SIGN_OUT_START });
 
-  signOut()
+  FirebaseAuthApi.signOut()
     .then(() => (
       dispatch({ type: AUTH.SIGN_OUT_SUCCESS })
     ))

@@ -2,7 +2,7 @@
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-  Sign In With Popup - Action
+  Send Password Reset Email - Action
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -11,20 +11,20 @@ import { auth as FirebaseAuthApi } from '../../firebase/api';
 import { AUTH } from '../../constants/actionTypes.const';
 
 /**
- *  Sign In With Popup
+ *  Send Password Reset Email
  */
-export default provider => dispatch => {
-  dispatch({ type: AUTH.SIGN_IN_WITH_POPUP_START });
+export default email => dispatch => {
+  dispatch({ type: AUTH.SEND_PASSWORD_RESET_EMAIL_START });
 
-  FirebaseAuthApi.signInWithPopup(provider)
+  FirebaseAuthApi.sendPasswordResetEmail(email)
     .then(() => (
-      dispatch({ type: AUTH.SIGN_IN_WITH_POPUP_SUCCESS })
+      dispatch({ type: AUTH.SEND_PASSWORD_RESET_EMAIL_SUCCESS })
     ))
     .catch(({ code, message }) => {
       alert(`${code}\n\n${message}`); // eslint-disable-line
 
       dispatch({
-        type: AUTH.SIGN_IN_WITH_POPUP_FAIL,
+        type: AUTH.SEND_PASSWORD_RESET_EMAIL_FAIL,
         payload: {
           code,
           message,
