@@ -18,8 +18,8 @@
     "build:prod": "NODE_ENV=production webpack --progress --colors",
     "check": "npm run check:eslint && npm run check:flow && npm run check:coverage",
     "check:coverage": "nyc --reporter=html --check-coverage --statements=100 --branches=75 --functions=100 --lines=100 npm run test",
-    "check:flow": "flow",
     "check:eslint": "eslint src test",
+    "check:flow": "flow",
     "commit": "git-cz",
     "tdd": "npm run test -- --watch",
     "test": "mocha --recursive --compilers=js:babel-core/register"

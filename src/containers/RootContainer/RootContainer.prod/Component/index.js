@@ -89,7 +89,7 @@ export default class extends Component {
         <div className="Firepack--RootContainer--Content">
           {
             !app.isReady || user.isAuthenticating
-            ? <div className="loading-screen">Please wait...</div>
+            ? <div className="Firepack--LoadingScreen">Please wait...</div>
             : cloneElement(children, { key: location.pathname })
           }
         </div>
