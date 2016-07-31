@@ -22,19 +22,19 @@ a **subject of breaking changes** in near future.
 
 Firepack is simple authentication wrapper for [Firebase](https://firebase.google.com/) applications
 built with [React](https://facebook.github.io/react/), [React router](https://github.com/reactjs/react-router) and [Redux](http://redux.js.org/).  
-It provide customizable *Sign up*, *Sign in* and *Reset password* forms and *social media authentication*.  
+It provides customizable *Sign up*, *Sign in*, *Reset password* forms and *social media authentication*.  
 Authentication providers can be easily managed by passing config object via *firebaseAuthProviders* to Firepack wrapper.
 
 
 ## How to use Firepack
 
-For now please take a look at [Firepack App](https://github.com/bulicmatko/firepack-app) (official Firepack starter).  
+For now, please take a look at [Firepack App](https://github.com/bulicmatko/firepack-app) (official Firepack starter).  
 **More documentation on how to use Firepack from scratch and with existing application will be available soon.**
 
 
 ## Demo
 
-To see it in action with [Firepack App](https://github.com/bulicmatko/firepack-app)
+To see it in action with [Firepack App](https://github.com/bulicmatko/firepack-app),
 please check the [demo](https://firepack-app.firebaseapp.com/).
 
 

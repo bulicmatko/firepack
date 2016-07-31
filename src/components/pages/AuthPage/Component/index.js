@@ -34,8 +34,8 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    appTitle: 'Firepack',
-    appDescription: 'Auth wrapper for Firebase applications built with React and Redux',
+    appTitle: '',
+    appDescription: '',
     firebaseAuthProviders: {},
     onSignInWithFacebook: noop,
     onSignInWithTwitter: noop,
@@ -75,6 +75,9 @@ export default class extends Component {
         <div className="Firepack--AuthPage--Content">
           <h1>{appTitle}</h1>
           <p>{appDescription}</p>
+          {(!firebaseAuthProviders.EmailAndPassword && !firebaseAuthProviders.Facebook &&
+            !firebaseAuthProviders.Twitter && !firebaseAuthProviders.Google &&
+            !firebaseAuthProviders.Github) && (<div>No auth providers enabled!</div>)}
           {firebaseAuthProviders.EmailAndPassword && (
             <div>
               {children}
@@ -86,11 +89,9 @@ export default class extends Component {
               )}
             </div>
           )}
-          {!firebaseAuthProviders.EmailAndPassword && (
-            <div>
-              Continue in with
-            </div>
-          )}
+          {!firebaseAuthProviders.EmailAndPassword && (firebaseAuthProviders.Facebook ||
+            firebaseAuthProviders.Twitter || firebaseAuthProviders.Google ||
+            firebaseAuthProviders.Github) && (<div>Continue in with</div>)}
           <ul>
             {firebaseAuthSocialProvidersArray.map((authProvider, i) => (
               firebaseAuthProviders[authProvider] &&

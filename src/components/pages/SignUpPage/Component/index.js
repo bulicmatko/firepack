@@ -61,7 +61,7 @@ export default class extends Component {
               <input
                 id="email"
                 type="email"
-                placeholder="Email"
+                placeholder="john.doe@email.com"
                 value={email}
                 onChange={this.handleEmailChange}
               />
@@ -71,7 +71,7 @@ export default class extends Component {
               <input
                 id="password"
                 type="password"
-                placeholder="Password"
+                placeholder="p45sw0rd"
                 value={password}
                 onChange={this.handlePasswordChange}
               />

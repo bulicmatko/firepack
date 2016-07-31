@@ -42,11 +42,16 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    appTitle: 'Firepack',
-    appDescription: 'Auth wrapper for Firebase applications built with React and Redux',
+    appTitle: '',
+    appDescription: '',
     routes: {},
     reducer: noop,
-    firebaseConfig: {},
+    firebaseConfig: {
+      apiKey: '',
+      authDomain: '',
+      databaseURL: '',
+      storageBucket: '',
+    },
     firebaseAuthProviders: {
       EmailAndPassword: true,
       Facebook: true,
@@ -64,7 +69,12 @@ export default class extends Component {
   };
 
   getChildContext() {
-    const { appTitle, appDescription, firebaseConfig, firebaseAuthProviders } = this.props;
+    const {
+      appTitle,
+      appDescription,
+      firebaseConfig,
+      firebaseAuthProviders,
+    } = this.props;
 
     return {
       appTitle,
