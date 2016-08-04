@@ -19,7 +19,7 @@ before_script:
 script:
   - npm run check
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - if ["$TRAVIS_BRANCH" == "master"]; then
       npm run build;
       nyc report --report-dir=./coverage --reporter=text-lcov > ./coverage/coverage.lcov;
       codecov;

@@ -9,7 +9,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const production = process.env.NODE_ENV === 'production';
+const dev = process.env.NODE_ENV !== 'production';
 
 /**
  *  Webpack Configuration
@@ -21,7 +21,7 @@ module.exports = {
   output: {
     path: './lib',
     library: 'Firepack',
-    filename: production ? 'firepack.prod.js' : 'firepack.dev.js',
+    filename: dev ? 'firepack.dev.js' : 'firepack.prod.js',
     libraryTarget: 'umd',
   },
   externals: {
@@ -39,7 +39,13 @@ module.exports = {
     'redux-thunk': 'redux-thunk',
     reselect: 'reselect',
   },
-  plugins: production ? [
+  plugins: dev ? [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
+    }),
+  ] : [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
@@ -50,12 +56,6 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: true,
-      },
-    }),
-  ] : [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
       },
     }),
   ],
