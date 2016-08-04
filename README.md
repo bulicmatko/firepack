@@ -32,6 +32,11 @@ For now, please take a look at [Firepack App](https://github.com/bulicmatko/fire
 **More documentation on how to use Firepack from scratch and with existing application will be available soon.**
 
 
+## Application Layout with Firepack
+
+![](https://github.com/bulicmatko/firepack/blob/master/docs/assets/diagram.png)
+
+
 ## Demo
 
 To see it in action with [Firepack App](https://github.com/bulicmatko/firepack-app),
