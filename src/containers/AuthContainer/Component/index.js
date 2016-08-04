@@ -11,8 +11,6 @@ import { withRouter } from 'react-router';
 
 import route from '../../../utils/route.util';
 
-const { location } = window;
-
 /**
  *  Auth Container
  */
@@ -67,7 +65,6 @@ export default class extends Component {
       <div className="Firepack--AuthContainer">
         <div className="Firepack--AuthContainer--Content">
           {cloneElement(children, {
-            key: location.pathname,
             appTitle,
             appDescription,
             firebaseAuthProviders,

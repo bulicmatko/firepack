@@ -6,12 +6,10 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes, cloneElement } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router';
 
 import route from '../../../utils/route.util';
-
-const { location } = window;
 
 /**
  *  Workspace Container
@@ -53,7 +51,7 @@ export default class extends Component {
     return (
       <div className="WorkspaceContainer">
         <div className="WorkspaceContainer--Content">
-          {cloneElement(children, { key: location.pathname })}
+          {children}
         </div>
       </div>
     );

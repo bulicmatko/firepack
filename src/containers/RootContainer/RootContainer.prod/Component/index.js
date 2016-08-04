@@ -6,7 +6,7 @@
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-import React, { Component, PropTypes, cloneElement } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router';
 import firebase from 'firebase';
 import noop from 'lodash/noop';
@@ -14,8 +14,6 @@ import noop from 'lodash/noop';
 import { APP, AUTH } from '../../../../constants/actionTypes.const';
 
 import route from '../../../../utils/route.util';
-
-const { location } = window;
 
 /**
  *  Root Container
@@ -90,7 +88,7 @@ export default class extends Component {
           {
             !app.isReady || user.isAuthenticating
             ? <div className="Firepack--LoadingScreen">Please wait...</div>
-            : cloneElement(children, { key: location.pathname })
+            : children
           }
         </div>
       </div>
