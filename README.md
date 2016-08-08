@@ -9,8 +9,6 @@
 [![NPM Status](https://img.shields.io/npm/dt/firepack.svg?style=flat-square)](https://www.npmjs.org/package/firepack)
 [![NPM Status](https://img.shields.io/npm/l/firepack.svg?style=flat-square)](https://github.com/bulicmatko/firepack/blob/master/LICENSE)
 
-![](https://github.com/bulicmatko/firepack/blob/master/docs/assets/firepack.png)
-
 
 ### DISCLAIMER
 
@@ -24,6 +22,14 @@ Firepack is simple Authentication wrapper for [Firebase](https://firebase.google
 built with [React](https://facebook.github.io/react/), [React router](https://github.com/reactjs/react-router) and [Redux](http://redux.js.org/).  
 It provides customizable *Sign up*, *Sign in*, *Reset password* forms and *social media authentication*.  
 All authentication providers can be easily managed by passing config object (*firebaseAuthProviders*) to Firepack.
+
+
+## Application Layout with Firepack
+
+![](https://github.com/bulicmatko/firepack/blob/master/docs/assets/diagram.png)
+
+This image should give you a visual interpretation on how Firepack wraps and renders your application.
+`WorkspaceContainer` and your Application `RootContainer` are accessible only if user is authenticated.
 
 
 ## How can I use Firepack
@@ -230,14 +236,6 @@ You don't have to use this helper to create your action types, but it will proba
 ```
 
 
-## Application Layout with Firepack
-
-![](https://github.com/bulicmatko/firepack/blob/master/docs/assets/diagram.png)
-
-This image should give you a visual interpretation on how Firepack wraps and renders your application.
-`WorkspaceContainer` and your Application `RootContainer` are accessible only if user is authenticated.
-
-
 ## Need more docs?
 
 For now, please take a look at [Firepack App](https://github.com/bulicmatko/firepack-app) (official Firepack starter)
@@ -249,6 +247,8 @@ or feel free [contact me](mailto:bulicmatko@gmail.com). 🙃
 
 To see it in action with [Firepack App](https://github.com/bulicmatko/firepack-app),
 please check the [demo](https://firepack-app.firebaseapp.com/).
+
+![](https://github.com/bulicmatko/firepack/blob/master/docs/assets/firepack.png)
 
 
 ## Contributing
