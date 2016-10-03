@@ -219,7 +219,7 @@ and `action.type` name matches the handler `key`, `function` assigned to that `k
 ```
 
 
-#### createActionTypes(actionTypesArray, prefix) (optional)
+#### createActionTypes(actionTypesArray, prefix) *(optional)*
 
 This helper accepts array of unique `action.type` names as first argument and `prefix` as second one.
 You don't have to use this helper to create your action types, but it will probably be more convenient for your application if you do.
