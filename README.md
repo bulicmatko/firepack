@@ -1,4 +1,6 @@
 # Firepack
+
+[![Join the chat at https://gitter.im/bulicmatko/firepack](https://badges.gitter.im/bulicmatko/firepack.svg)](https://gitter.im/bulicmatko/firepack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > Authentication wrapper for [Firebase](https://firebase.google.com/) Applications built with [React](https://facebook.github.io/react/),
 [React router](https://github.com/reactjs/react-router) and [Redux](http://redux.js.org/)
 
