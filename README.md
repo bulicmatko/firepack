@@ -2,6 +2,7 @@
 > Authentication wrapper for [Firebase](https://firebase.google.com/) Applications built with [React](https://facebook.github.io/react/),
 [React router](https://github.com/reactjs/react-router) and [Redux](http://redux.js.org/)
 
+[![Join the chat at https://gitter.im/bulicmatko/firepack](https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square)](https://gitter.im/bulicmatko/firepack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://img.shields.io/travis/bulicmatko/firepack.svg?style=flat-square)](https://travis-ci.org/bulicmatko/firepack)
 [![Code Coverage Status](https://img.shields.io/codecov/c/github/bulicmatko/firepack.svg?style=flat-square)](https://codecov.io/github/bulicmatko/firepack)
 [![NPM Status](https://img.shields.io/npm/v/firepack.svg?style=flat-square)](https://www.npmjs.com/package/firepack)
